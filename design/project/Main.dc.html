@@ -1,0 +1,284 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Portafolio Datasheet</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@500;800;900&amp;family=IBM+Plex+Mono:wght@400;500;600&amp;family=IBM+Plex+Sans:wght@400;500&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#ECE8DF}
+a{color:#141414}a:hover{color:#55524C}
+</style>
+</helmet>
+<div style="background: #ECE8DF; color: #141414; font-family: 'IBM Plex Sans', system-ui, sans-serif; min-height: 100vh">
+<div style="max-width: 1360px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 40px)">
+
+<!-- ===== CABECERA DE DATASHEET ===== -->
+<header style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 24px; padding: 18px 0; border-bottom: 2px solid #141414; font-family: 'IBM Plex Mono', monospace; font-size: 12px; letter-spacing: 0.08em; text-transform: uppercase">
+<div style="display: flex; gap: 16px; flex-wrap: wrap; align-items: center">
+<span style="background: {{accent}}; padding: 4px 8px; font-weight: 600">Datasheet</span>
+<span>Part no. DEV-SR / MERN-AI</span>
+</div>
+<div style="display: flex; gap: 16px; flex-wrap: wrap">
+<span>Rev. 2026.10</span>
+<span>Hoja 1 de 1</span>
+<span>Estado: disponible</span>
+</div>
+</header>
+
+<section style="padding: clamp(32px, 6vw, 72px) 0 clamp(32px, 5vw, 56px); border-bottom: 2px solid #141414">
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px; font-family: 'IBM Plex Mono', monospace; font-size: 13px; margin-bottom: 20px">
+<span>[TU NOMBRE]</span>
+<span style="color: #55524C">Componente full-stack · Web + Mobile · Desarrollo asistido por IA</span>
+</div>
+<h1 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; text-transform: uppercase; font-size: clamp(48px, 13.5vw, 220px); line-height: 0.82; letter-spacing: -0.01em">Desarrollador<br>Senior<span style="color: {{accentText}}">.</span></h1>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 24px; margin-top: clamp(28px, 4vw, 48px)">
+<p style="margin: 0; font-size: 18px; line-height: 1.5; max-width: 46ch">Construyo productos completos sobre el stack MERN, de la API al móvil, con un flujo de Spec-Driven Development apoyado en Claude Code y Cursor.</p>
+<dl style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 6px 20px; align-content: start">
+<dt style="color: #55524C">Familia</dt><dd style="margin: 0">MERN / TypeScript</dd>
+<dt style="color: #55524C">Encapsulado</dt><dd style="margin: 0">Web · iOS · Android</dd>
+<dt style="color: #55524C">Experiencia</dt><dd style="margin: 0">[AÑOS] años</dd>
+<dt style="color: #55524C">Ubicación</dt><dd style="margin: 0">[CIUDAD] · Remoto</dd>
+</dl>
+</div>
+</section>
+
+<!-- ===== FIG. A — PINOUT ===== -->
+<section style="padding: clamp(40px, 6vw, 80px) 0; border-bottom: 2px solid #141414">
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(28px, 4vw, 48px)">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 0.9">Fig. A — Pinout</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #55524C; text-transform: uppercase; letter-spacing: 0.08em">Vista superior · 12 pines</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(0, 1fr) minmax(120px, 300px) minmax(0, 1fr); align-items: stretch; font-family: 'IBM Plex Mono', monospace; font-size: clamp(10px, 1.2vw, 14px); text-transform: uppercase">
+<div style="display: flex; flex-direction: column; justify-content: space-around; gap: 10px; padding: 24px 0">
+<sc-for list="{{pinsLeft}}" as="pin" hint-placeholder-count="6">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="flex-grow: 1; text-align: right; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{pin.label}}</span>
+<span style="width: clamp(12px, 4vw, 64px); border-top: 2px solid #141414"></span>
+<span style="background: {{accent}}; border: 2px solid #141414; min-width: 26px; text-align: center; padding: 2px 0; font-weight: 600">{{pin.n}}</span>
+</div>
+</sc-for>
+</div>
+<div style="background: #141414; color: #ECE8DF; display: flex; flex-direction: column; justify-content: space-between; padding: 20px 16px; position: relative; min-height: 380px">
+<span style="width: 16px; height: 16px; border-radius: 50%; border: 2px solid #ECE8DF"></span>
+<div style="text-align: center">
+<div style="font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(28px, 4vw, 52px); line-height: 0.9">DEV-SR</div>
+<div style="margin-top: 8px; font-size: clamp(9px, 1vw, 12px); letter-spacing: 0.12em">MERN · MOBILE · AI</div>
+</div>
+<div style="font-size: clamp(9px, 0.9vw, 11px); color: #B9B4A8; text-align: center">Fabricado con criterio</div>
+</div>
+<div style="display: flex; flex-direction: column; justify-content: space-around; gap: 10px; padding: 24px 0">
+<sc-for list="{{pinsRight}}" as="pin" hint-placeholder-count="6">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="background: {{accent}}; border: 2px solid #141414; min-width: 26px; text-align: center; padding: 2px 0; font-weight: 600">{{pin.n}}</span>
+<span style="width: clamp(12px, 4vw, 64px); border-top: 2px solid #141414"></span>
+<span style="flex-grow: 1; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis">{{pin.label}}</span>
+</div>
+</sc-for>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 24px; font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #55524C">
+<span>Pines 1–6: datos, servidor y web</span>
+<span>Pines 7–12: interfaz, mobile y herramientas</span>
+</div>
+</section>
+
+<!-- ===== TABLA 1 — CARACTERÍSTICAS ===== -->
+<section style="padding: clamp(40px, 6vw, 80px) 0; border-bottom: 2px solid #141414">
+<h2 style="margin: 0 0 clamp(24px, 3vw, 40px); font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 0.9">Tabla 1 — Características</h2>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: clamp(13px, 1.2vw, 15px)">
+<div style="display: grid; grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr); gap: 16px; padding: 10px 0; border-bottom: 2px solid #141414; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #55524C">
+<span>Parámetro</span><span>Valor</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #141414">
+<span style="font-weight: 600">Backend</span><span>Node.js · Express · NestJS</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #141414">
+<span style="font-weight: 600">Frontend</span><span>React · Next.js · Vue 3</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #141414">
+<span style="font-weight: 600">Mobile</span><span>React Native · Ionic</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #141414">
+<span style="font-weight: 600">Datos</span><span>MongoDB</span>
+</div>
+<div style="display: grid; grid-template-columns: minmax(110px, 1fr) minmax(0, 3fr); gap: 16px; padding: 16px 0; border-bottom: 1px solid #141414; background: {{accent}}">
+<span style="font-weight: 600; padding-left: 8px">Método</span><span>Spec-Driven Development: especificación primero, implementación asistida con Claude Code y Cursor, revisión humana al final</span>
+</div>
+</div>
+</section>
+
+<!-- ===== CIRCUITOS DE APLICACIÓN ===== -->
+<section style="padding: clamp(40px, 6vw, 80px) 0 0">
+<div style="display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 8px; margin-bottom: clamp(24px, 3vw, 40px)">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 0.9">Circuitos de aplicación</h2>
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; color: #55524C; text-transform: uppercase; letter-spacing: 0.08em">5 implementaciones de referencia</span>
+</div>
+
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 3vw, 40px); padding: clamp(24px, 3vw, 40px) 0; border-top: 2px solid #141414">
+<div style="display: flex; align-items: flex-start; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; background: {{accent}}; padding: 4px 8px; border: 2px solid #141414">FIG. 01</span>
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>
+</div>
+<div>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5.5vw, 76px); line-height: 0.9; text-transform: uppercase">Tu voz, tu cuento</h3>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.5; max-width: 42ch">Crea cuentos a partir de la narración de un niño.</p>
+</div>
+<dl style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; align-content: start">
+<dt style="color: #55524C">Entrada</dt><dd style="margin: 0">Voz infantil</dd>
+<dt style="color: #55524C">Salida</dt><dd style="margin: 0">Cuento</dd>
+<dt style="color: #55524C">Stack</dt><dd style="margin: 0">[STACK]</dd>
+<dt style="color: #55524C">Enlace</dt><dd style="margin: 0"><a href="#">[URL]</a></dd>
+</dl>
+</article>
+
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 3vw, 40px); padding: clamp(24px, 3vw, 40px) 0; border-top: 1px solid #141414">
+<div style="display: flex; align-items: flex-start; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; background: {{accent}}; padding: 4px 8px; border: 2px solid #141414">FIG. 02</span>
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="15" r="4"></circle><circle cx="6" cy="9" r="1.8"></circle><circle cx="10" cy="5.5" r="1.8"></circle><circle cx="14" cy="5.5" r="1.8"></circle><circle cx="18" cy="9" r="1.8"></circle></svg>
+</div>
+<div>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5.5vw, 76px); line-height: 0.9; text-transform: uppercase">Vetsi</h3>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.5; max-width: 42ch">Atención médica primaria para mascotas.</p>
+</div>
+<dl style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; align-content: start">
+<dt style="color: #55524C">Dominio</dt><dd style="margin: 0">Salud veterinaria</dd>
+<dt style="color: #55524C">Usuario</dt><dd style="margin: 0">Dueños de mascotas</dd>
+<dt style="color: #55524C">Stack</dt><dd style="margin: 0">[STACK]</dd>
+<dt style="color: #55524C">Enlace</dt><dd style="margin: 0"><a href="#">[URL]</a></dd>
+</dl>
+</article>
+
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 3vw, 40px); padding: clamp(24px, 3vw, 40px) 0; border-top: 1px solid #141414">
+<div style="display: flex; align-items: flex-start; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; background: {{accent}}; padding: 4px 8px; border: 2px solid #141414">FIG. 03</span>
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="5.5" cy="16" r="3.5"></circle><circle cx="18.5" cy="16" r="3.5"></circle><path d="M5.5 16l4-6h5l4 6M9.5 10l-1-3h-2M14.5 10l1.5-3h2.5"></path></svg>
+</div>
+<div>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5.5vw, 76px); line-height: 0.9; text-transform: uppercase">Wobber</h3>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.5; max-width: 42ch">Red social para moteros.</p>
+</div>
+<dl style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; align-content: start">
+<dt style="color: #55524C">Dominio</dt><dd style="margin: 0">Comunidad</dd>
+<dt style="color: #55524C">Usuario</dt><dd style="margin: 0">Moteros</dd>
+<dt style="color: #55524C">Stack</dt><dd style="margin: 0">[STACK]</dd>
+<dt style="color: #55524C">Enlace</dt><dd style="margin: 0"><a href="#">[URL]</a></dd>
+</dl>
+</article>
+
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 3vw, 40px); padding: clamp(24px, 3vw, 40px) 0; border-top: 1px solid #141414">
+<div style="display: flex; align-items: flex-start; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; background: {{accent}}; padding: 4px 8px; border: 2px solid #141414">FIG. 04</span>
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="4"></circle><path d="M2 21c0-4 3-6.5 7-6.5s5 1 6 2.5"></path><circle cx="18" cy="15" r="2.5"></circle><path d="M18 17.5V22M18 20h2"></path></svg>
+</div>
+<div>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5.5vw, 76px); line-height: 0.9; text-transform: uppercase">Glik</h3>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.5; max-width: 42ch">Autogestión de usuarios.</p>
+</div>
+<dl style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; align-content: start">
+<dt style="color: #55524C">Dominio</dt><dd style="margin: 0">Identidad y acceso</dd>
+<dt style="color: #55524C">Usuario</dt><dd style="margin: 0">Organizaciones</dd>
+<dt style="color: #55524C">Stack</dt><dd style="margin: 0">[STACK]</dd>
+<dt style="color: #55524C">Enlace</dt><dd style="margin: 0"><a href="#">[URL]</a></dd>
+</dl>
+</article>
+
+<article style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 3vw, 40px); padding: clamp(24px, 3vw, 40px) 0; border-top: 1px solid #141414; border-bottom: 2px solid #141414">
+<div style="display: flex; align-items: flex-start; gap: 16px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600; background: {{accent}}; padding: 4px 8px; border: 2px solid #141414">FIG. 05</span>
+<svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#141414" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="18" r="2.5"></circle><path d="M18 3a3.5 3.5 0 0 0-3.5 3.5C14.5 9 18 12 18 12s3.5-3 3.5-5.5A3.5 3.5 0 0 0 18 3z"></path><path d="M8.5 18H15a3 3 0 0 0 0-6h-4a3 3 0 0 1 0-6h1"></path></svg>
+</div>
+<div>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(40px, 5.5vw, 76px); line-height: 0.9; text-transform: uppercase">Libre</h3>
+<p style="margin: 12px 0 0; font-size: 17px; line-height: 1.5; max-width: 42ch">Aplicación de servicio de transporte.</p>
+</div>
+<dl style="margin: 0; font-family: 'IBM Plex Mono', monospace; font-size: 13px; display: grid; grid-template-columns: max-content 1fr; gap: 6px 16px; align-content: start">
+<dt style="color: #55524C">Dominio</dt><dd style="margin: 0">Movilidad</dd>
+<dt style="color: #55524C">Usuario</dt><dd style="margin: 0">Pasajeros y conductores</dd>
+<dt style="color: #55524C">Stack</dt><dd style="margin: 0">[STACK]</dd>
+<dt style="color: #55524C">Enlace</dt><dd style="margin: 0"><a href="#">[URL]</a></dd>
+</dl>
+</article>
+</section>
+
+<!-- ===== NOTAS DE OPERACIÓN — SDD ===== -->
+<section style="padding: clamp(40px, 6vw, 80px) 0; border-bottom: 2px solid #141414">
+<h2 style="margin: 0 0 clamp(24px, 3vw, 40px); font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: clamp(36px, 5vw, 64px); text-transform: uppercase; line-height: 0.9">Notas de operación</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr)); gap: 0; border: 2px solid #141414">
+<div style="padding: 24px; border-right: 2px solid #141414; border-bottom: 2px solid #141414; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600">PASO 1</span>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 36px; text-transform: uppercase; line-height: 0.95">Especificar</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5">La spec define comportamiento, contratos y criterios de aceptación antes de escribir código.</p>
+</div>
+<div style="padding: 24px; border-right: 2px solid #141414; border-bottom: 2px solid #141414; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600">PASO 2</span>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 36px; text-transform: uppercase; line-height: 0.95">Planificar</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5">La spec se descompone en tareas pequeñas y verificables.</p>
+</div>
+<div style="padding: 24px; border-right: 2px solid #141414; border-bottom: 2px solid #141414; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600">PASO 3</span>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 36px; text-transform: uppercase; line-height: 0.95">Implementar</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5">Claude Code y Cursor ejecutan contra la spec; yo dirijo la arquitectura.</p>
+</div>
+<div style="padding: 24px; background: {{accent}}; border-bottom: 2px solid #141414; display: flex; flex-direction: column; gap: 12px">
+<span style="font-family: 'IBM Plex Mono', monospace; font-size: 12px; font-weight: 600">PASO 4</span>
+<h3 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 800; font-size: 36px; text-transform: uppercase; line-height: 0.95">Verificar</h3>
+<p style="margin: 0; font-size: 15px; line-height: 1.5">Revisión humana y tests contra los criterios de la spec antes de entregar.</p>
+</div>
+</div>
+</section>
+
+<!-- ===== PEDIDOS ===== -->
+<footer style="padding: clamp(40px, 6vw, 80px) 0 32px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px; align-items: end">
+<h2 style="margin: 0; font-family: 'Big Shoulders Display', sans-serif; font-weight: 900; font-size: clamp(56px, 10vw, 160px); text-transform: uppercase; line-height: 0.82">Información<br>de pedidos</h2>
+<div style="font-family: 'IBM Plex Mono', monospace; font-size: 15px; display: flex; flex-direction: column; gap: 0">
+<a href="mailto:[EMAIL]" style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 2px solid #141414; text-decoration: none; min-height: 44px; box-sizing: border-box"><span>Email</span><span>[EMAIL]</span></a>
+<a href="#" style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #141414; text-decoration: none; min-height: 44px; box-sizing: border-box"><span>GitHub</span><span>[USUARIO]</span></a>
+<a href="#" style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #141414; text-decoration: none; min-height: 44px; box-sizing: border-box"><span>LinkedIn</span><span>[PERFIL]</span></a>
+<a href="#" style="display: flex; justify-content: space-between; gap: 16px; padding: 14px 0; border-top: 1px solid #141414; border-bottom: 2px solid #141414; text-decoration: none; min-height: 44px; box-sizing: border-box; background: {{accent}}"><span style="padding-left: 8px">Descargar CV</span><span style="padding-right: 8px">PDF ↓</span></a>
+</div>
+</div>
+<div style="display: flex; justify-content: space-between; flex-wrap: wrap; gap: 8px; margin-top: 48px; font-family: 'IBM Plex Mono', monospace; font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: #55524C">
+<span>DEV-SR / MERN-AI · Rev. 2026.10</span>
+<span>Especificaciones sujetas a mejora continua</span>
+</div>
+</footer>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"accent":{"editor":"color","default":"#FF5A1F","options":["#FF5A1F","#C6F432","#FFD23F","#7FB2FF"]},"$preview":{"width":1440,"height":4100}}'>
+class Component extends DCLogic {
+  renderVals() {
+    const accent = this.props.accent ?? '#FF5A1F';
+    return {
+      accent: accent,
+      accentText: accent === '#C6F432' || accent === '#FFD23F' ? '#141414' : accent,
+      pinsLeft: [
+        { n: '01', label: 'MongoDB' },
+        { n: '02', label: 'Express' },
+        { n: '03', label: 'Node.js' },
+        { n: '04', label: 'NestJS' },
+        { n: '05', label: 'Next.js' },
+        { n: '06', label: 'React' }
+      ],
+      pinsRight: [
+        { n: '07', label: 'Vue 3' },
+        { n: '08', label: 'React Native' },
+        { n: '09', label: 'Ionic' },
+        { n: '10', label: 'Claude Code' },
+        { n: '11', label: 'Cursor' },
+        { n: '12', label: 'SDD' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

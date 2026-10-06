@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Portafolio Camaleón</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&amp;family=Fraunces:ital,wght@0,400;1,900&amp;family=Fredoka:wght@400;700&amp;family=Big+Shoulders+Display:wght@900&amp;family=JetBrains+Mono:wght@400;700&amp;family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0}
+a{color:inherit}a:hover{opacity:.75}
+.mv{transition:background-color .5s ease,color .5s ease,border-radius .6s ease,border-color .5s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
+.tilt{transform:rotate(var(--r,0deg))}
+.tilt:hover{transform:rotate(0deg) scale(1.06)}
+.blob{animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.marq{display:flex;width:max-content;animation:slide 22s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion:reduce){.blob,.marq{animation:none}}
+button{font:inherit;cursor:pointer}
+</style>
+</helmet>
+<div class="mv" style="background: {{t.bg}}; color: {{t.ink}}; font-family: {{t.body}}; min-height: 100vh; overflow: hidden">
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 40px)">
+
+<!-- ===== BARRA ===== -->
+<header style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; padding: 20px 0">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700">[TU NOMBRE]</span>
+<div style="display: flex; align-items: center; gap: 12px; flex-wrap: wrap">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em">Piel actual: {{t.name}}</span>
+<button class="mv" onClick="{{cycle}}" style="background: {{t.ink}}; color: {{t.bg}}; border: none; border-radius: {{t.chipRadius}}; padding: 12px 20px; min-height: 44px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700">Cambiar de piel ↻</button>
+</div>
+</header>
+
+<!-- ===== HERO ===== -->
+<section style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 32px; align-items: center; padding: clamp(32px, 6vw, 88px) 0 clamp(40px, 6vw, 96px)">
+<div>
+<p style="margin: 0 0 16px; font-family: 'JetBrains Mono', monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em">Desarrollador senior · full-stack · mobile</p>
+<h1 class="mv" style="margin: 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(64px, 12vw, 200px); line-height: 0.85; letter-spacing: -0.02em; transform: skewX({{t.skew}})">Me<br>adapto.</h1>
+<p style="margin: 28px 0 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(26px, 3.6vw, 48px); line-height: 1.1">Hoy soy <span class="mv" style="background: {{t.accent}}; color: {{t.onAccent}}; padding: 0 12px; border-radius: {{t.chipRadius}}; white-space: nowrap">{{t.role}}</span></p>
+<p style="margin: 28px 0 0; font-size: 18px; line-height: 1.55; max-width: 48ch; color: {{t.muted}}">Del backend al bolsillo: MERN, Next, NestJS, Vue 3, Ionic y React Native. Trabajo con Spec-Driven Development, con Claude Code y Cursor como copilotos.</p>
+</div>
+<div style="display: flex; justify-content: center; align-items: center; min-height: 360px">
+<div style="position: relative; width: min(100%, 440px); aspect-ratio: 1 / 1; display: flex; align-items: center; justify-content: center">
+<div class="blob mv" style="position: absolute; inset: 0; background: {{t.accent}}; border-radius: {{t.blob}}"></div>
+<div class="mv" style="position: relative; text-align: center; color: {{t.onAccent}}; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(36px, 5vw, 64px); line-height: 0.95; padding: 24px">{{t.blobText}}</div>
+</div>
+</div>
+</section>
+
+<!-- ===== MARQUESINA SDD ===== -->
+</div>
+<div class="mv" style="background: {{t.accent}}; color: {{t.onAccent}}; padding: 18px 0; border-top: 3px solid {{t.ink}}; border-bottom: 3px solid {{t.ink}}; overflow: hidden; transform: rotate(-1.5deg); margin: 0 -24px">
+<div class="marq" style="font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(24px, 3vw, 40px); white-space: nowrap; gap: 40px">
+<span>ESPECIFICAR ✦ PLANIFICAR ✦ CODEAR CON CLAUDE CODE + CURSOR ✦ VERIFICAR ✦</span>
+<span>ESPECIFICAR ✦ PLANIFICAR ✦ CODEAR CON CLAUDE CODE + CURSOR ✦ VERIFICAR ✦</span>
+<span>ESPECIFICAR ✦ PLANIFICAR ✦ CODEAR CON CLAUDE CODE + CURSOR ✦ VERIFICAR ✦</span>
+<span>ESPECIFICAR ✦ PLANIFICAR ✦ CODEAR CON CLAUDE CODE + CURSOR ✦ VERIFICAR ✦</span>
+</div>
+</div>
+<div style="max-width: 1320px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 40px)">
+
+<!-- ===== PROYECTOS ===== -->
+<section style="padding: clamp(56px, 8vw, 112px) 0 clamp(32px, 4vw, 56px)">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 40px">
+<h2 class="mv" style="margin: 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(44px, 7vw, 104px); line-height: 0.9">Cinco mundos,<br>una mano.</h2>
+<p style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 13px; max-width: 30ch; color: {{t.muted}}">Toca un proyecto: el portafolio entero cambia de piel para parecerse a él.</p>
+</div>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 220px), 1fr)); gap: 20px">
+<sc-for list="{{projects}}" as="p" hint-placeholder-count="5">
+<button class="mv tilt" onClick="{{p.pick}}" aria-pressed="{{p.pressed}}" style="--r: {{p.rot}}; text-align: left; background: {{p.cardBg}}; color: {{p.cardInk}}; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; padding: 24px; min-height: 240px; display: flex; flex-direction: column; justify-content: space-between; gap: 20px; box-shadow: 6px 6px 0 {{t.ink}}">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700">{{p.n}}</span>
+<span style="display: flex; flex-direction: column; gap: 10px">
+<span style="font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: 34px; line-height: 0.95">{{p.name}}</span>
+<span style="font-size: 15px; line-height: 1.4">{{p.desc}}</span>
+</span>
+</button>
+</sc-for>
+</div>
+</section>
+
+<!-- ===== DETALLE ===== -->
+<section style="padding: 0 0 clamp(56px, 8vw, 112px)">
+<sc-if value="{{hasSel}}" hint-placeholder-val="{{ false }}">
+<div class="mv" style="background: {{t.surface}}; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; padding: clamp(24px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 32px">
+<div>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; text-transform: uppercase; letter-spacing: 0.08em">Proyecto {{sel.n}}</span>
+<h3 class="mv" style="margin: 12px 0 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(48px, 8vw, 120px); line-height: 0.88">{{sel.name}}</h3>
+<p style="margin: 20px 0 0; font-size: 20px; line-height: 1.5; max-width: 36ch">{{sel.desc}}</p>
+</div>
+<div style="display: flex; flex-direction: column; justify-content: space-between; gap: 24px">
+<dl style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: 15px; display: grid; grid-template-columns: max-content 1fr; gap: 12px 24px">
+<dt style="color: {{t.muted}}">Stack</dt><dd style="margin: 0">[STACK]</dd>
+<dt style="color: {{t.muted}}">Plataforma</dt><dd style="margin: 0">[WEB / iOS / ANDROID]</dd>
+<dt style="color: {{t.muted}}">Mi rol</dt><dd style="margin: 0">[ROL]</dd>
+</dl>
+<div style="display: flex; gap: 12px; flex-wrap: wrap">
+<a href="#" class="mv" style="background: {{t.accent}}; color: {{t.onAccent}}; border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 12px 22px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">Ver proyecto →</a>
+<button class="mv" onClick="{{reset}}" style="background: transparent; color: {{t.ink}}; border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 12px 22px; min-height: 44px; font-weight: 700">Volver a mi forma original</button>
+</div>
+</div>
+</div>
+</sc-if>
+<sc-if value="{{noSel}}" hint-placeholder-val="{{ true }}">
+<div class="mv" style="border: 3px dashed {{t.ink}}; border-radius: {{t.radius}}; padding: clamp(24px, 4vw, 48px); text-align: center; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(24px, 3vw, 40px)">↑ Elige un mundo y mira cómo me transformo</div>
+</sc-if>
+</section>
+
+<!-- ===== STACK ===== -->
+<section style="padding: 0 0 clamp(56px, 8vw, 112px)">
+<h2 class="mv" style="margin: 0 0 12px; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(44px, 7vw, 104px); line-height: 0.9">Caja de herramientas</h2>
+<p style="margin: 0 0 40px; font-family: 'JetBrains Mono', monospace; font-size: 13px; color: {{t.muted}}">Web · Backend · Mobile · IA — pasa el cursor por encima</p>
+<div style="display: flex; flex-wrap: wrap; gap: 16px 14px">
+<sc-for list="{{stack}}" as="s" hint-placeholder-count="12">
+<span class="mv tilt" style="--r: {{s.rot}}; display: inline-block; background: {{s.bg}}; color: {{s.ink}}; border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 14px 26px; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(20px, 2.4vw, 32px)">{{s.label}}</span>
+</sc-for>
+</div>
+</section>
+
+<!-- ===== CONTACTO ===== -->
+<footer style="padding: clamp(40px, 6vw, 80px) 0 32px; border-top: 3px solid {{t.ink}}">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 40px; align-items: end">
+<h2 class="mv" style="margin: 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(48px, 8vw, 128px); line-height: 0.88">¿Qué forma necesita tu equipo?</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="mailto:[EMAIL]" class="mv" style="background: {{t.accent}}; color: {{t.onAccent}}; border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 14px 24px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">[EMAIL]</a>
+<a href="#" class="mv" style="border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 14px 24px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">GitHub</a>
+<a href="#" class="mv" style="border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 14px 24px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">LinkedIn</a>
+<a href="#" class="mv" style="border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 14px 24px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">CV ↓</a>
+</div>
+</div>
+<p style="margin: 48px 0 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; color: {{t.muted}}">[TU NOMBRE] · Desarrollador senior · Esta página tiene 6 pieles. Has visto {{seen}}.</p>
+</footer>
+
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":3600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var themes = {
+      base:   { name: 'Camaleón', role: 'camaleón full-stack', blobText: 'Una forma para cada problema', bg: '#F4F1EA', surface: '#FFFFFF', ink: '#161616', muted: '#4A4740', accent: '#FF4D2E', onAccent: '#161616', display: "'Bricolage Grotesque', sans-serif", dWeight: 800, dStyle: 'normal', body: "'Bricolage Grotesque', sans-serif", radius: '24px', chipRadius: '999px', skew: '0deg', blob: '42% 58% 63% 37% / 41% 44% 56% 59%' },
+      cuento: { name: 'Cuento', role: 'narrador de código', blobText: 'Había una vez un commit…', bg: '#FFE9B8', surface: '#FFF7E3', ink: '#3A1F0F', muted: '#6B4426', accent: '#F2762E', onAccent: '#3A1F0F', display: "'Fraunces', serif", dWeight: 900, dStyle: 'italic', body: "'Fraunces', serif", radius: '40px', chipRadius: '999px', skew: '0deg', blob: '50%' },
+      vetsi:  { name: 'Vetsi', role: 'médico de producto', blobText: 'Diagnóstico: todo en verde', bg: '#E3F4EE', surface: '#FFFFFF', ink: '#0E3B32', muted: '#2E5E53', accent: '#5FD3A8', onAccent: '#0E3B32', display: "'Fredoka', sans-serif", dWeight: 700, dStyle: 'normal', body: "'Fredoka', sans-serif", radius: '32px', chipRadius: '999px', skew: '0deg', blob: '50% 50% 40% 60% / 60% 40% 60% 40%' },
+      wobber: { name: 'Wobber', role: 'motero del deploy', blobText: 'Acelera a producción', bg: '#141414', surface: '#232323', ink: '#F2F0EA', muted: '#B8B4AA', accent: '#FF6A00', onAccent: '#141414', display: "'Big Shoulders Display', sans-serif", dWeight: 900, dStyle: 'normal', body: "'Space Grotesk', sans-serif", radius: '0px', chipRadius: '0px', skew: '-8deg', blob: '0%' },
+      glik:   { name: 'Glik', role: 'guardián de usuarios', blobText: '> acceso concedido_', bg: '#0B1020', surface: '#141B33', ink: '#D7FFE0', muted: '#8FB59A', accent: '#39FF88', onAccent: '#0B1020', display: "'JetBrains Mono', monospace", dWeight: 700, dStyle: 'normal', body: "'JetBrains Mono', monospace", radius: '6px', chipRadius: '4px', skew: '0deg', blob: '8px' },
+      libre:  { name: 'Libre', role: 'conductor de rutas', blobText: 'Destino: tu próximo producto', bg: '#E8EEFF', surface: '#FFFFFF', ink: '#10183A', muted: '#3A4472', accent: '#3355FF', onAccent: '#FFFFFF', display: "'Space Grotesk', sans-serif", dWeight: 700, dStyle: 'normal', body: "'Space Grotesk', sans-serif", radius: '28px', chipRadius: '999px', skew: '0deg', blob: '999px 999px 999px 0' }
+    };
+    var order = ['base', 'cuento', 'vetsi', 'wobber', 'glik', 'libre'];
+    var st = this.state || {};
+    var mode = st.mode || 'base';
+    var seenList = st.seen || ['base'];
+    var t = themes[mode];
+    var self = this;
+    var go = function (m) {
+      var s = (self.state && self.state.seen) || ['base'];
+      self.setState({ mode: m, seen: s.indexOf(m) === -1 ? s.concat([m]) : s });
+    };
+    var raw = [
+      { id: 'cuento', n: '01', name: 'Tu voz, tu cuento', desc: 'Crea cuentos a partir de la narración de un niño.' },
+      { id: 'vetsi', n: '02', name: 'Vetsi', desc: 'Atención médica primaria para mascotas.' },
+      { id: 'wobber', n: '03', name: 'Wobber', desc: 'Red social para moteros.' },
+      { id: 'glik', n: '04', name: 'Glik', desc: 'Autogestión de usuarios.' },
+      { id: 'libre', n: '05', name: 'Libre', desc: 'Aplicación de servicio de transporte.' }
+    ];
+    var rots = ['-2deg', '1.5deg', '-1deg', '2deg', '-1.5deg'];
+    var projects = raw.map(function (p, i) {
+      var on = p.id === mode;
+      return {
+        n: p.n, name: p.name, desc: p.desc, rot: rots[i],
+        pressed: on ? 'true' : 'false',
+        cardBg: on ? t.accent : t.surface,
+        cardInk: on ? t.onAccent : t.ink,
+        pick: function () { go(on ? 'base' : p.id); }
+      };
+    });
+    var sel = raw.filter(function (p) { return p.id === mode; })[0] || null;
+    var labels = ['MongoDB', 'Express', 'React', 'Node.js', 'Next.js', 'NestJS', 'Vue 3', 'Ionic', 'React Native', 'Claude Code', 'Cursor', 'SDD'];
+    var srots = ['-3deg', '2deg', '-1deg', '3deg', '-2deg', '1deg', '-4deg', '2.5deg', '-1.5deg', '3deg', '-2.5deg', '1.5deg'];
+    var stack = labels.map(function (l, i) {
+      var hot = i % 3 === 0;
+      return { label: l, rot: srots[i], bg: hot ? t.accent : t.surface, ink: hot ? t.onAccent : t.ink };
+    });
+    return {
+      t: t,
+      projects: projects,
+      stack: stack,
+      sel: sel || { n: '', name: '', desc: '' },
+      hasSel: !!sel,
+      noSel: !sel,
+      seen: seenList.length === 6 ? 'las 6 — ¡versatilidad comprobada!' : seenList.length + ' de 6',
+      cycle: function () { go(order[(order.indexOf(mode) + 1) % order.length]); },
+      reset: function () { go('base'); }
+    };
+  }
+}
+</script>
+</body>
+</html>

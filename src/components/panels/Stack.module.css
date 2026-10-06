@@ -1,0 +1,65 @@
+.title {
+  margin-top: 14px;
+}
+
+/* Marquesinas a sangre: anulan el gutter del panel */
+.marquees {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(10px, 2vh, 20px);
+  margin: clamp(20px, 5vh, 52px) calc(-1 * var(--gx)) 0;
+}
+
+.extra {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 24px;
+  margin-top: clamp(20px, 5vh, 52px);
+  max-width: 980px;
+}
+
+.tools {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.tool {
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  padding: 9px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+
+.tool:hover {
+  border-color: var(--pink);
+  color: var(--pink);
+}
+
+.method {
+  margin-top: 12px;
+  font-size: 15px;
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.method strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* SPEC §7 */
+@media (max-width: 820px) {
+  .extra {
+    gap: 16px;
+  }
+}
+
+@media (max-height: 700px) {
+  .extra {
+    display: none;
+  }
+}

@@ -1,0 +1,88 @@
+.title {
+  margin-top: 18px;
+  max-width: 22ch;
+}
+
+.body {
+  margin-top: clamp(12px, 2.6vh, 24px);
+  max-width: 54ch;
+  font-size: var(--fs-body);
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  margin-top: clamp(20px, 5vh, 52px);
+  max-width: 880px;
+  border-top: 1px solid var(--line);
+}
+
+/* El número va primero visualmente; en el DOM el término (dt) precede al valor (dd). */
+.stat {
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: flex-end;
+  padding: 18px 16px 0 0;
+}
+
+.value {
+  font-size: var(--fs-stat);
+  line-height: 1;
+  padding-right: 0.1em;
+  width: fit-content;
+}
+
+.label {
+  margin-top: 6px;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--muted);
+}
+
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: clamp(18px, 4vh, 36px);
+}
+
+.accent {
+  border-color: rgb(198 241 74 / 0.35);
+  color: var(--lime);
+}
+
+/* SPEC §7 */
+@media (max-width: 820px) {
+  .stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .stat {
+    padding-top: 12px;
+  }
+}
+
+@media (max-height: 700px) {
+  .chips {
+    display: none;
+  }
+}
+
+/* Pantallas muy bajas (p. ej. 320×568): cifras y texto más compactos */
+@media (max-height: 600px) {
+  .stats {
+    margin-top: 14px;
+  }
+  .stat {
+    padding-top: 8px;
+  }
+  .value {
+    font-size: 36px;
+  }
+  .body {
+    font-size: 14px;
+    line-height: 1.5;
+  }
+}

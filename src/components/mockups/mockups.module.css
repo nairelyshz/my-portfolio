@@ -1,0 +1,185 @@
+/*
+ * Mockups CSS de proyectos — portados de Reel.dc.html.
+ * Todo escala con el contenedor (container-type: size en .visual): 1em ≈ 15px a 560px.
+ */
+
+.stage {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 2.68cqw;
+  line-height: 1.3;
+}
+
+/* Teléfono visto desde abajo */
+.phone {
+  width: 46%;
+  height: 84%;
+  border: 1.43cqw solid;
+  border-bottom: none;
+  border-radius: 6.4cqw 6.4cqw 0 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* ---- Wobber ---- */
+.wobber {
+  background: #1c1c1c;
+  border-color: #ff6a00;
+  padding: 8% 6% 0;
+  gap: 1.8cqw;
+  color: #f2f0ea;
+}
+
+.wobberBrand {
+  font-weight: 700;
+  font-size: 1.2em;
+  color: #ff6a00;
+  letter-spacing: 0.05em;
+}
+
+.wobberUser {
+  display: flex;
+  align-items: center;
+  gap: 1.4cqw;
+  font-size: 0.87em;
+  font-weight: 700;
+}
+
+.avatar {
+  width: 4.6cqw;
+  height: 4.6cqw;
+  border-radius: 50%;
+  background: #ff6a00;
+}
+
+.wobberMap {
+  flex-grow: 1;
+  max-height: 40%;
+  border-radius: 2.1cqw;
+  background: #2b2b2b;
+  overflow: hidden;
+}
+
+.wobberMap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.small {
+  font-size: 0.87em;
+}
+
+/* ---- Glik ---- */
+.glikStage {
+  padding: 0 8%;
+}
+
+.window {
+  width: 100%;
+  height: 72%;
+  background: #141b33;
+  border: 1px solid #2c3a6b;
+  border-bottom: none;
+  border-radius: 2.9cqw 2.9cqw 0 0;
+  overflow: hidden;
+  color: #d7ffe0;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+}
+
+.titlebar {
+  display: flex;
+  align-items: center;
+  gap: 1.1cqw;
+  padding: 2.1cqw;
+  border-bottom: 1px solid #2c3a6b;
+  font-size: 0.8em;
+  color: #8fb59a;
+}
+
+.light {
+  width: 1.8cqw;
+  height: 1.8cqw;
+  border-radius: 50%;
+}
+
+.titlebar span:last-child {
+  margin-left: 1.4cqw;
+}
+
+.users {
+  padding: 2.5cqw;
+  display: flex;
+  flex-direction: column;
+  gap: 2.1cqw;
+  font-size: 0.93em;
+}
+
+.user {
+  display: flex;
+  justify-content: space-between;
+}
+
+.dim {
+  color: #8fb59a;
+}
+
+.on {
+  color: #39ff88;
+}
+
+.invite {
+  margin-top: 1.1cqw;
+  background: #39ff88;
+  color: #0b1020;
+  padding: 1.8cqw;
+  border-radius: 1.4cqw;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ---- Libre ---- */
+.libre {
+  background: #e8eeff;
+  border-color: #10183a;
+}
+
+.grid {
+  flex-grow: 1;
+  background-image:
+    linear-gradient(#d3dcfa 2px, transparent 2px),
+    linear-gradient(90deg, #d3dcfa 2px, transparent 2px);
+  background-size: 5.4cqw 5.4cqw;
+}
+
+.grid svg {
+  width: 100%;
+  height: 100%;
+}
+
+.ride {
+  background: #ffffff;
+  padding: 2.1cqw;
+  display: flex;
+  flex-direction: column;
+  gap: 1.1cqw;
+  color: #10183a;
+  font-size: 0.87em;
+}
+
+.rideTitle {
+  font-weight: 700;
+}
+
+.rideButton {
+  background: #3355ff;
+  color: #ffffff;
+  border-radius: var(--radius-pill);
+  padding: 1.8cqw;
+  text-align: center;
+  font-weight: 700;
+}

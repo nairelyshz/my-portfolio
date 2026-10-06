@@ -1,0 +1,413 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Nairelys Hernández</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&amp;family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;background:#F4F1FF}
+a{color:#5B2EE0}a:hover{color:#3D1BA8}
+.float{animation:float 5s ease-in-out infinite}
+.float2{animation:float 6.5s ease-in-out infinite reverse}
+.float3{animation:float 7.5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(3deg)}}
+.spin{animation:spin 26s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.lift{transition:transform .25s ease,box-shadow .25s ease}
+.lift:hover{transform:translateY(-6px);box-shadow:0 24px 48px -20px rgba(60,30,160,.45)}
+.wave{transform-origin:236px 230px;animation:wave 2.4s ease-in-out infinite}
+@keyframes wave{0%,60%,100%{transform:rotate(0)}15%,45%{transform:rotate(-12deg)}30%{transform:rotate(8deg)}}
+.bar{animation:eq 1s ease-in-out infinite alternate}
+@keyframes eq{to{transform:scaleY(.35)}}
+@media (prefers-reduced-motion:reduce){.float,.float2,.float3,.spin,.wave,.bar{animation:none}}
+input,textarea,button{font:inherit}
+</style>
+</helmet>
+<div style="font-family: 'Plus Jakarta Sans', system-ui, sans-serif; color: #1A1238; background: #F4F1FF">
+
+<!-- ================= HERO ================= -->
+<section id="inicio" style="background: radial-gradient(circle at 78% 35%, #4B23C9 0%, #1E0E52 46%, #120A33 100%); color: #FFFFFF; position: relative; overflow: hidden">
+<div style="max-width: 1280px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 40px)">
+<nav style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; padding: 24px 0">
+<span style="font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 18px">&lt;<span style="color: #C6F432">nairelys</span> /&gt;</span>
+<div style="display: flex; gap: clamp(12px, 2.4vw, 32px); flex-wrap: wrap; font-size: 15px; font-weight: 500">
+<a href="#sobre-mi" style="color: #E4DCFF; text-decoration: none">Sobre mí</a>
+<a href="#proyectos" style="color: #E4DCFF; text-decoration: none">Proyectos</a>
+<a href="#experiencia" style="color: #E4DCFF; text-decoration: none">Experiencia</a>
+<a href="#contacto" style="color: #E4DCFF; text-decoration: none">Contacto</a>
+</div>
+</nav>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 440px), 1fr)); gap: 48px; align-items: center; padding: clamp(32px, 5vw, 64px) 0 clamp(64px, 8vw, 112px)">
+<div>
+<span style="display: inline-flex; align-items: center; gap: 8px; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.22); padding: 8px 14px; border-radius: 999px; font-size: 13px; font-weight: 600">
+<span style="width: 8px; height: 8px; border-radius: 50%; background: #C6F432"></span>Desarrolladora Full Stack · Caracas, Venezuela</span>
+<h1 style="margin: 24px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(46px, 6.6vw, 92px); line-height: 0.98; letter-spacing: -0.02em">Hola, soy<br><span style="color: #C6F432">Nairelys</span><br>Hernández</h1>
+<p style="margin: 24px 0 0; font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: #DCD3FF; max-width: 42ch">Ingeniera en Computación. Construyo apps web y móviles de punta a punta, del microservicio a la tienda de apps, con tecnología que genera impacto real.</p>
+<div style="display: flex; gap: 14px; flex-wrap: wrap; margin-top: 32px">
+<a href="#proyectos" class="lift" style="background: #C6F432; color: #120A33; padding: 14px 26px; border-radius: 14px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Ver mi trabajo →</a>
+<a href="#contacto" class="lift" style="background: transparent; color: #FFFFFF; border: 2px solid rgba(255,255,255,0.5); padding: 12px 24px; border-radius: 14px; font-weight: 700; text-decoration: none; min-height: 48px; box-sizing: border-box; display: inline-flex; align-items: center">Hablemos</a>
+</div>
+<div style="display: flex; gap: 10px; flex-wrap: wrap; margin-top: 32px; font-family: 'JetBrains Mono', monospace; font-size: 13px">
+<span style="padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.08)">MERN</span>
+<span style="padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.08)">NestJS</span>
+<span style="padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.08)">Ionic</span>
+<span style="padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.08)">React Native</span>
+<span style="padding: 8px 12px; border-radius: 10px; background: rgba(255,255,255,0.08)">Claude Code</span>
+</div>
+</div>
+
+<!-- Foto -->
+<div style="position: relative; display: flex; justify-content: center; padding: 24px 0">
+<div style="position: relative; width: min(100%, 420px)">
+<div class="spin" style="position: absolute; inset: -22px; border-radius: 50%; border: 2px dashed rgba(198,244,50,0.55)"></div>
+<div style="position: absolute; inset: 18px -18px -18px 18px; border-radius: 999px 999px 40px 40px; background: #C6F432"></div>
+<img src="/_blob/efcc7adaf9535ddde06a3194627e0fbd" alt="Foto de Nairelys Hernández" style="position: relative; display: block; width: 100%; aspect-ratio: 4 / 5; object-fit: cover; object-position: 40% 30%; border-radius: 999px 999px 40px 40px; border: 4px solid #FFFFFF; box-sizing: border-box">
+<div class="float" style="position: absolute; left: -36px; top: 14%; width: 66px; height: 66px; border-radius: 18px; background: linear-gradient(145deg, #8F6BFF, #5B2EE0); box-shadow: 0 16px 30px -10px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 22px">{ }</div>
+<div class="float2" style="position: absolute; right: -30px; top: 6%; width: 74px; height: 74px; border-radius: 20px; background: linear-gradient(145deg, #A98BFF, #6B3DF5); box-shadow: 0 16px 30px -10px rgba(0,0,0,0.5), inset 0 2px 0 rgba(255,255,255,0.35); display: flex; align-items: center; justify-content: center; font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 20px">&lt;/&gt;</div>
+<div class="float3" style="position: absolute; left: -44px; bottom: 16%; background: #FFFFFF; color: #1A1238; border-radius: 18px; padding: 12px 16px; box-shadow: 0 20px 40px -14px rgba(0,0,0,0.55); display: flex; align-items: center; gap: 12px">
+<span style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 32px; color: #5B2EE0">8</span>
+<span style="font-size: 12px; font-weight: 600; line-height: 1.25">años creando<br>software</span>
+</div>
+<div class="float2" style="position: absolute; right: -40px; bottom: 26%; background: #C6F432; color: #120A33; border-radius: 14px; padding: 10px 14px; box-shadow: 0 16px 30px -10px rgba(0,0,0,0.5); font-family: 'JetBrains Mono', monospace; font-weight: 700; font-size: 13px">Web + Mobile ✓</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ================= SOBRE MÍ ================= -->
+<section id="sobre-mi" style="max-width: 1280px; margin: 0 auto; padding: clamp(56px, 7vw, 96px) clamp(16px, 3vw, 40px) 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: 32px; align-items: center">
+
+<div style="background: linear-gradient(160deg, #E4DAFF, #C9B6FF); border-radius: 28px; aspect-ratio: 1 / 1; display: flex; align-items: flex-end; justify-content: center; overflow: hidden; position: relative">
+<span style="position: absolute; top: 18px; left: 18px; font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; background: #FFFFFF; color: #5B2EE0; padding: 6px 10px; border-radius: 999px">versión ilustrada ✦</span>
+<svg viewBox="0 0 300 300" style="width: 92%; height: auto" role="img" aria-label="Ilustración de Nairelys saludando">
+<path d="M84 110 C80 60 116 40 152 42 C190 44 220 66 218 112 L226 270 L76 270 Z" fill="#1F1512"></path>
+<path d="M66 300 C66 236 98 214 150 214 C202 214 234 236 234 300 Z" fill="#22305A"></path>
+<path d="M66 300 C66 240 88 222 112 216 L118 300 Z" fill="#1F1512"></path>
+<path d="M234 300 C234 240 212 222 188 216 L182 300 Z" fill="#1F1512"></path>
+<path d="M134 216 L150 232 L166 216" fill="#F2F0EA"></path>
+<g class="wave"><path d="M212 244 C232 218 236 182 236 160" fill="none" stroke="#22305A" stroke-width="26" stroke-linecap="round"></path><circle cx="236" cy="148" r="17" fill="#F2CDB4"></circle><rect x="227" y="118" width="7" height="20" rx="3.5" fill="#F2CDB4"></rect><rect x="237" y="114" width="7" height="22" rx="3.5" fill="#F2CDB4"></rect><rect x="247" y="120" width="7" height="20" rx="3.5" fill="#F2CDB4"></rect></g>
+<rect x="138" y="188" width="24" height="28" rx="6" fill="#E8BCA2"></rect>
+<ellipse cx="150" cy="134" rx="52" ry="58" fill="#F2CDB4"></ellipse>
+<path d="M98 132 C92 86 120 66 154 68 C186 70 206 92 204 124 C188 106 160 92 126 96 C114 104 104 118 98 132 Z" fill="#1F1512"></path>
+<path d="M100 120 C104 96 134 84 168 90" fill="none" stroke="#3A2A24" stroke-width="3" stroke-linecap="round"></path>
+<rect x="110" y="128" width="34" height="26" rx="5" fill="#FFFFFF" fill-opacity="0.35" stroke="#111111" stroke-width="5"></rect>
+<rect x="158" y="128" width="34" height="26" rx="5" fill="#FFFFFF" fill-opacity="0.35" stroke="#111111" stroke-width="5"></rect>
+<path d="M144 138 L158 138" stroke="#111111" stroke-width="5"></path>
+<path d="M110 134 L98 130 M192 134 L202 130" stroke="#111111" stroke-width="4" stroke-linecap="round"></path>
+<path d="M120 142 Q127 137 134 142" fill="none" stroke="#2B1B17" stroke-width="3.5" stroke-linecap="round"></path>
+<path d="M168 142 Q175 137 182 142" fill="none" stroke="#2B1B17" stroke-width="3.5" stroke-linecap="round"></path>
+<path d="M114 120 Q126 114 138 118 M164 118 Q176 114 188 120" fill="none" stroke="#1F1512" stroke-width="3.5" stroke-linecap="round"></path>
+<ellipse cx="116" cy="166" rx="9" ry="5" fill="#EFA3A0" opacity="0.55"></ellipse><ellipse cx="186" cy="166" rx="9" ry="5" fill="#EFA3A0" opacity="0.55"></ellipse>
+<path d="M134 172 Q152 182 170 168" fill="none" stroke="#9A4A3E" stroke-width="4" stroke-linecap="round"></path>
+</svg>
+</div>
+
+<div>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #5B2EE0; background: #E4DAFF; padding: 6px 12px; border-radius: 999px">SOBRE MÍ</span>
+<h2 style="margin: 16px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05">Me adapto al problema, no al revés.</h2>
+<p style="margin: 16px 0 0; font-size: 17px; line-height: 1.6; color: #4A4366">Empecé en 2018 haciendo apps móviles con Ionic y Java. Desde entonces he pasado por Angular, Vue, React, Node, NestJS y microservicios en Scala. Hoy trabajo con Spec-Driven Development y uso Claude Code y Cursor para entregar más rápido sin perder calidad.</p>
+<ul style="list-style: none; margin: 20px 0 0; padding: 0; display: grid; gap: 10px; font-size: 15px">
+<li><b>Formación:</b> Ingeniería de la Computación, Universidad Simón Bolívar</li>
+<li><b>Ubicación:</b> Caracas, Venezuela · Remoto</li>
+<li><b>Email:</b> <a href="mailto:njhs694@gmail.com">njhs694@gmail.com</a></li>
+</ul>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px">
+<div class="lift" style="background: #EDE6FF; border-radius: 22px; padding: 22px"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; color: #5B2EE0">8</div><div style="font-size: 14px; font-weight: 600; margin-top: 6px">Años desarrollando (desde 2018)</div></div>
+<div class="lift" style="background: #EAF9D2; border-radius: 22px; padding: 22px"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; color: #3B6B00">7</div><div style="font-size: 14px; font-weight: 600; margin-top: 6px">Empresas en las que he trabajado</div></div>
+<div class="lift" style="background: #FFE9DC; border-radius: 22px; padding: 22px"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; color: #B24A0E">5</div><div style="font-size: 14px; font-weight: 600; margin-top: 6px">Productos destacados</div></div>
+<div class="lift" style="background: #DDF0FF; border-radius: 22px; padding: 22px"><div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 40px; color: #0B5A99">18</div><div style="font-size: 14px; font-weight: 600; margin-top: 6px">Tecnologías y herramientas</div></div>
+</div>
+</div>
+</section>
+
+<!-- ================= STACK ================= -->
+<section id="stack" style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 104px) clamp(16px, 3vw, 40px) 0; text-align: center">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #5B2EE0; background: #E4DAFF; padding: 6px 12px; border-radius: 999px">MI STACK</span>
+<h2 style="margin: 16px 0 36px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px)">Tecnologías con las que construyo</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 14px">
+<sc-for list="{{stack}}" as="s" hint-placeholder-count="18">
+<div class="lift" style="background: #FFFFFF; border-radius: 20px; padding: 18px 8px; display: flex; flex-direction: column; align-items: center; gap: 10px; box-shadow: 0 6px 20px -12px rgba(60,30,160,0.35)">
+<span style="width: 52px; height: 52px; border-radius: 14px; background: {{s.bg}}; color: {{s.fg}}; display: flex; align-items: center; justify-content: center; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 20px">{{s.mono}}</span>
+<span style="font-size: 13px; font-weight: 600">{{s.label}}</span>
+</div>
+</sc-for>
+</div>
+</section>
+
+<!-- ================= PROYECTOS ================= -->
+<section id="proyectos" style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 104px) clamp(16px, 3vw, 40px) 0">
+<div style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 16px; margin-bottom: 36px">
+<div>
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #5B2EE0; background: #E4DAFF; padding: 6px 12px; border-radius: 999px">PROYECTOS</span>
+<h2 style="margin: 16px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px)">Cinco mundos que he construido</h2>
+</div>
+<a href="https://www.linkedin.com/in/nairelys-hernandez" style="background: #5B2EE0; color: #FFFFFF; padding: 12px 22px; border-radius: 999px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Ver LinkedIn →</a>
+</div>
+
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr)); gap: 24px">
+
+<!-- 01 Tu voz tu cuento -->
+<article class="lift" style="background: #FFFFFF; border-radius: 26px; overflow: hidden; box-shadow: 0 10px 30px -18px rgba(60,30,160,0.4)">
+<div style="height: 260px; background: linear-gradient(160deg, #FFE7A8, #FFB86B); display: flex; align-items: flex-end; justify-content: center; overflow: hidden">
+<div style="width: 170px; height: 236px; background: #FFF8E8; border: 6px solid #2A1A10; border-bottom: none; border-radius: 28px 28px 0 0; padding: 16px 14px 0; box-sizing: border-box; display: flex; flex-direction: column; align-items: center; gap: 12px">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 13px; color: #3A1F0F; align-self: flex-start">Cuéntame tu historia</div>
+<div style="display: flex; align-items: center; gap: 4px; height: 34px">
+<span class="bar" style="width: 5px; height: 20px; background: #F2762E; border-radius: 3px"></span><span class="bar" style="width: 5px; height: 32px; background: #F2762E; border-radius: 3px; animation-delay: .2s"></span><span class="bar" style="width: 5px; height: 26px; background: #F2762E; border-radius: 3px; animation-delay: .4s"></span><span class="bar" style="width: 5px; height: 34px; background: #F2762E; border-radius: 3px; animation-delay: .1s"></span><span class="bar" style="width: 5px; height: 18px; background: #F2762E; border-radius: 3px; animation-delay: .3s"></span><span class="bar" style="width: 5px; height: 28px; background: #F2762E; border-radius: 3px; animation-delay: .5s"></span>
+</div>
+<div style="width: 64px; height: 64px; border-radius: 50%; background: #F2762E; display: flex; align-items: center; justify-content: center; box-shadow: 0 0 0 10px rgba(242,118,46,0.2)">
+<svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="9" y="3" width="6" height="11" rx="3"></rect><path d="M5 11a7 7 0 0 0 14 0M12 18v3"></path></svg>
+</div>
+<div style="width: 100%; background: #FFE9B8; border-radius: 12px; padding: 8px 10px; box-sizing: border-box; font-family: Georgia, serif; font-style: italic; font-size: 12px; color: #3A1F0F">Había una vez un dragón que…</div>
+</div>
+</div>
+<div style="padding: 22px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">Tu voz, tu cuento</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #4A4366">Crea cuentos a partir de la narración de un niño.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; background: #FFF1D6; color: #7A3E00; padding: 6px 10px; border-radius: 999px">[STACK]</span>
+<a href="#" aria-label="Ver Tu voz, tu cuento" style="width: 44px; height: 44px; border-radius: 12px; border: 2px solid #E4DAFF; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700">↗</a>
+</div>
+</div>
+</article>
+
+<!-- 02 Vetsi -->
+<article class="lift" style="background: #FFFFFF; border-radius: 26px; overflow: hidden; box-shadow: 0 10px 30px -18px rgba(60,30,160,0.4)">
+<div style="height: 260px; background: linear-gradient(160deg, #C9F1E2, #6FD9B2); display: flex; align-items: flex-end; justify-content: center; overflow: hidden">
+<div style="width: 170px; height: 236px; background: #FFFFFF; border: 6px solid #0E3B32; border-bottom: none; border-radius: 28px 28px 0 0; padding: 16px 14px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 10px">
+<div style="display: flex; align-items: center; gap: 8px">
+<span style="width: 34px; height: 34px; border-radius: 50%; background: #FFD9A8; display: flex; align-items: center; justify-content: center">
+<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0E3B32" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="15" r="4"></circle><circle cx="6" cy="9" r="1.8"></circle><circle cx="10" cy="5.5" r="1.8"></circle><circle cx="14" cy="5.5" r="1.8"></circle><circle cx="18" cy="9" r="1.8"></circle></svg></span>
+<div><div style="font-size: 12px; font-weight: 700; color: #0E3B32">Luna</div><div style="font-size: 10px; color: #2E5E53">Gata · 3 años</div></div>
+</div>
+<div style="background: #E3F4EE; border-radius: 12px; padding: 10px"><div style="font-size: 10px; color: #2E5E53">Próxima consulta</div><div style="font-size: 12px; font-weight: 700; color: #0E3B32; margin-top: 2px">Control general</div></div>
+<div style="display: flex; flex-wrap: wrap; gap: 4px">
+<span style="font-size: 10px; padding: 4px 8px; border-radius: 999px; background: #0E3B32; color: #FFFFFF">Vacunas</span>
+<span style="font-size: 10px; padding: 4px 8px; border-radius: 999px; border: 1px solid #0E3B32; color: #0E3B32">Síntomas</span>
+<span style="font-size: 10px; padding: 4px 8px; border-radius: 999px; border: 1px solid #0E3B32; color: #0E3B32">Historial</span>
+</div>
+<div style="background: #5FD3A8; border-radius: 12px; padding: 10px; text-align: center; font-size: 12px; font-weight: 700; color: #0E3B32">Hablar con un veterinario</div>
+</div>
+</div>
+<div style="padding: 22px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">Vetsi</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #4A4366">Atención médica primaria para mascotas. Desarrollé la app para Android e iOS y el panel web.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 8px">
+<span style="display: flex; gap: 6px; flex-wrap: wrap"><span style="font-size: 12px; font-weight: 600; background: #DDF5EC; color: #0E3B32; padding: 6px 10px; border-radius: 999px">Android</span><span style="font-size: 12px; font-weight: 600; background: #DDF5EC; color: #0E3B32; padding: 6px 10px; border-radius: 999px">iOS</span><span style="font-size: 12px; font-weight: 600; background: #DDF5EC; color: #0E3B32; padding: 6px 10px; border-radius: 999px">Panel web</span></span>
+<a href="#" aria-label="Ver Vetsi" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; border: 2px solid #E4DAFF; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700">↗</a>
+</div>
+</div>
+</article>
+
+<!-- 03 Wobber -->
+<article class="lift" style="background: #FFFFFF; border-radius: 26px; overflow: hidden; box-shadow: 0 10px 30px -18px rgba(60,30,160,0.4)">
+<div style="height: 260px; background: linear-gradient(160deg, #2A2A2A, #0F0F0F); display: flex; align-items: flex-end; justify-content: center; overflow: hidden">
+<div style="width: 170px; height: 236px; background: #1C1C1C; border: 6px solid #FF6A00; border-bottom: none; border-radius: 28px 28px 0 0; padding: 14px 12px 0; box-sizing: border-box; display: flex; flex-direction: column; gap: 8px; color: #F2F0EA">
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 15px; color: #FF6A00">WOBBER</div>
+<div style="display: flex; align-items: center; gap: 6px"><span style="width: 22px; height: 22px; border-radius: 50%; background: #FF6A00"></span><span style="font-size: 11px; font-weight: 700">@ruta_andina</span></div>
+<div style="height: 76px; border-radius: 10px; background: #2B2B2B; position: relative; overflow: hidden">
+<svg viewBox="0 0 140 76" width="100%" height="100%" aria-hidden="true"><path d="M8 64 C30 20 60 70 80 34 S120 20 132 10" fill="none" stroke="#FF6A00" stroke-width="4" stroke-linecap="round" stroke-dasharray="1 8"></path><circle cx="8" cy="64" r="5" fill="#F2F0EA"></circle><circle cx="132" cy="10" r="5" fill="#FF6A00"></circle></svg>
+</div>
+<div style="font-size: 11px">Rodada del domingo · 240 km</div>
+<div style="display: flex; gap: 12px; font-size: 11px; color: #B8B4AA"><span>♥ Me gusta</span><span>Comentar</span></div>
+</div>
+</div>
+<div style="padding: 22px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">Wobber</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #4A4366">Red social para moteros.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; background: #FFE6D4; color: #8A3A00; padding: 6px 10px; border-radius: 999px">[STACK]</span>
+<a href="#" aria-label="Ver Wobber" style="width: 44px; height: 44px; border-radius: 12px; border: 2px solid #E4DAFF; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700">↗</a>
+</div>
+</div>
+</article>
+
+<!-- 04 Glik -->
+<article class="lift" style="background: #FFFFFF; border-radius: 26px; overflow: hidden; box-shadow: 0 10px 30px -18px rgba(60,30,160,0.4)">
+<div style="height: 260px; background: linear-gradient(160deg, #1B2550, #0B1020); display: flex; align-items: flex-end; justify-content: center; overflow: hidden; padding: 0 20px">
+<div style="width: 100%; max-width: 300px; height: 210px; background: #141B33; border: 1px solid #2C3A6B; border-bottom: none; border-radius: 14px 14px 0 0; overflow: hidden; color: #D7FFE0; font-family: 'JetBrains Mono', monospace">
+<div style="display: flex; gap: 5px; padding: 10px; border-bottom: 1px solid #2C3A6B"><span style="width: 8px; height: 8px; border-radius: 50%; background: #FF6B6B"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: #FFD23F"></span><span style="width: 8px; height: 8px; border-radius: 50%; background: #39FF88"></span><span style="margin-left: 8px; font-size: 10px; color: #8FB59A">glik / usuarios</span></div>
+<div style="padding: 10px; display: flex; flex-direction: column; gap: 8px; font-size: 11px">
+<div style="display: flex; justify-content: space-between; align-items: center"><span>ana.r</span><span style="color: #8FB59A">admin</span><span style="width: 28px; height: 16px; border-radius: 8px; background: #39FF88; position: relative"><span style="position: absolute; right: 2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #0B1020"></span></span></div>
+<div style="display: flex; justify-content: space-between; align-items: center"><span>carlos.m</span><span style="color: #8FB59A">editor</span><span style="width: 28px; height: 16px; border-radius: 8px; background: #39FF88; position: relative"><span style="position: absolute; right: 2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #0B1020"></span></span></div>
+<div style="display: flex; justify-content: space-between; align-items: center"><span>luisa.p</span><span style="color: #8FB59A">lector</span><span style="width: 28px; height: 16px; border-radius: 8px; background: #2C3A6B; position: relative"><span style="position: absolute; left: 2px; top: 2px; width: 12px; height: 12px; border-radius: 50%; background: #8FB59A"></span></span></div>
+<div style="margin-top: 6px; background: #39FF88; color: #0B1020; padding: 8px; border-radius: 6px; text-align: center; font-weight: 700">+ Invitar usuario</div>
+</div>
+</div>
+</div>
+<div style="padding: 22px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">Glik</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #4A4366">Autogestión de usuarios.</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 8px">
+<span style="font-size: 12px; font-weight: 600; background: #DFF9E7; color: #135C2E; padding: 6px 10px; border-radius: 999px">[STACK]</span>
+<a href="#" aria-label="Ver Glik" style="width: 44px; height: 44px; border-radius: 12px; border: 2px solid #E4DAFF; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700">↗</a>
+</div>
+</div>
+</article>
+
+<!-- 05 Libre -->
+<article class="lift" style="background: #FFFFFF; border-radius: 26px; overflow: hidden; box-shadow: 0 10px 30px -18px rgba(60,30,160,0.4)">
+<div style="height: 260px; background: linear-gradient(160deg, #CFDBFF, #7F9BFF); display: flex; align-items: flex-end; justify-content: center; overflow: hidden">
+<div style="width: 170px; height: 236px; background: #EEF2FF; border: 6px solid #10183A; border-bottom: none; border-radius: 28px 28px 0 0; box-sizing: border-box; overflow: hidden; display: flex; flex-direction: column">
+<div style="flex-grow: 1; position: relative; background-color: #E8EEFF; background-image: linear-gradient(#D3DCFA 2px, transparent 2px), linear-gradient(90deg, #D3DCFA 2px, transparent 2px); background-size: 28px 28px">
+<svg viewBox="0 0 160 140" width="100%" height="100%" aria-hidden="true"><path d="M24 120 L24 74 L86 74 L86 34 L132 34" fill="none" stroke="#3355FF" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"></path><circle cx="24" cy="120" r="8" fill="#10183A"></circle><circle cx="132" cy="34" r="9" fill="#3355FF" stroke="#FFFFFF" stroke-width="3"></circle></svg>
+</div>
+<div style="background: #FFFFFF; padding: 10px; display: flex; flex-direction: column; gap: 6px">
+<div style="font-size: 11px; color: #3A4472">Destino</div>
+<div style="font-size: 12px; font-weight: 700; color: #10183A">Centro · 12 min</div>
+<div style="background: #3355FF; color: #FFFFFF; border-radius: 999px; padding: 8px; text-align: center; font-size: 12px; font-weight: 700">Pedir viaje</div>
+</div>
+</div>
+</div>
+<div style="padding: 22px">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px">Libre</h3>
+<p style="margin: 8px 0 0; font-size: 15px; line-height: 1.5; color: #4A4366">Aplicación de servicio de transporte. Desarrollé las apps móviles con Ionic (2023).</p>
+<div style="display: flex; justify-content: space-between; align-items: center; margin-top: 16px; gap: 8px">
+<span style="display: flex; gap: 6px; flex-wrap: wrap"><span style="font-size: 12px; font-weight: 600; background: #E1E8FF; color: #1D2C80; padding: 6px 10px; border-radius: 999px">Ionic</span><span style="font-size: 12px; font-weight: 600; background: #E1E8FF; color: #1D2C80; padding: 6px 10px; border-radius: 999px">Full Stack</span></span>
+<a href="#" aria-label="Ver Libre" style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 12px; border: 2px solid #E4DAFF; display: flex; align-items: center; justify-content: center; text-decoration: none; font-weight: 700">↗</a>
+</div>
+</div>
+</article>
+
+<!-- CTA -->
+<article style="background: #5B2EE0; color: #FFFFFF; border-radius: 26px; padding: 32px; display: flex; flex-direction: column; justify-content: space-between; gap: 24px; min-height: 360px; position: relative; overflow: hidden">
+<div style="position: absolute; right: -40px; top: -40px; width: 180px; height: 180px; border-radius: 50%; background: #7C55FF"></div>
+<span style="position: relative; font-family: 'JetBrains Mono', monospace; font-size: 40px; font-weight: 700; color: #C6F432">06?</span>
+<div style="position: relative">
+<h3 style="margin: 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 32px; line-height: 1.05">El próximo puede ser el tuyo.</h3>
+<p style="margin: 12px 0 0; font-size: 15px; line-height: 1.5; color: #E4DCFF">Web, mobile o ambos. Cuéntame la idea y la convertimos en una spec.</p>
+</div>
+<a href="#contacto" style="position: relative; align-self: flex-start; background: #C6F432; color: #120A33; padding: 12px 22px; border-radius: 14px; font-weight: 700; text-decoration: none; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">Empezar un proyecto →</a>
+</article>
+
+</div>
+</section>
+
+<!-- ================= EXPERIENCIA + FORMACIÓN + MÉTODO ================= -->
+<section id="experiencia" style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 104px) clamp(16px, 3vw, 40px) 0">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 420px), 1fr)); gap: 24px; align-items: start">
+
+<div style="background: #FFFFFF; border-radius: 26px; padding: clamp(24px, 3vw, 36px); box-shadow: 0 10px 30px -18px rgba(60,30,160,0.4)">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #5B2EE0; background: #E4DAFF; padding: 6px 12px; border-radius: 999px">EXPERIENCIA</span>
+<h2 style="margin: 16px 0 24px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 2.8vw, 36px)">Dónde he trabajado</h2>
+<div style="border-left: 3px solid #E4DAFF; margin-left: 8px">
+<sc-for list="{{jobs}}" as="j" hint-placeholder-count="7">
+<div style="position: relative; padding: 0 0 22px 24px">
+<span style="position: absolute; left: -10px; top: 2px; width: 16px; height: 16px; border-radius: 50%; background: {{j.dot}}; border: 3px solid #FFFFFF"></span>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #5B2EE0; font-weight: 700">{{j.when}}</div>
+<div style="font-weight: 700; margin-top: 4px">{{j.company}} · <span style="font-weight: 500">{{j.role}}</span></div>
+<div style="font-size: 14px; color: #4A4366; margin-top: 2px">{{j.what}}</div>
+</div>
+</sc-for>
+</div>
+</div>
+
+<div style="display: flex; flex-direction: column; gap: 24px">
+<div style="background: linear-gradient(150deg, #EAF9D2, #D5F28F); border-radius: 26px; padding: clamp(24px, 3vw, 36px); display: flex; gap: 20px; align-items: center">
+<span style="flex-shrink: 0; width: 64px; height: 64px; border-radius: 18px; background: #1A1238; display: flex; align-items: center; justify-content: center">
+<svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#C6F432" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"></path><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"></path></svg></span>
+<div>
+<div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700; color: #3B6B00">FORMACIÓN</div>
+<div style="font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: 24px; margin-top: 4px; line-height: 1.1">Ingeniería de la Computación</div>
+<div style="font-size: 15px; margin-top: 4px">Universidad Simón Bolívar</div>
+</div>
+</div>
+
+<div style="background: #FFFFFF; border-radius: 26px; padding: clamp(24px, 3vw, 36px); box-shadow: 0 10px 30px -18px rgba(60,30,160,0.4)">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #5B2EE0; background: #E4DAFF; padding: 6px 12px; border-radius: 999px">CÓMO TRABAJO</span>
+<h2 style="margin: 16px 0 24px; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(28px, 2.8vw, 36px)">Spec-Driven Development + IA</h2>
+<div style="display: flex; flex-direction: column; gap: 18px">
+<div style="display: flex; gap: 16px; align-items: flex-start"><span style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 14px; background: #EDE6FF; color: #5B2EE0; display: flex; align-items: center; justify-content: center; font-weight: 800">1</span><div><div style="font-weight: 700">Especificar</div><div style="font-size: 14px; color: #4A4366; margin-top: 2px">Comportamiento, contratos y criterios de aceptación antes del código.</div></div></div>
+<div style="display: flex; gap: 16px; align-items: flex-start"><span style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 14px; background: #EDE6FF; color: #5B2EE0; display: flex; align-items: center; justify-content: center; font-weight: 800">2</span><div><div style="font-weight: 700">Planificar</div><div style="font-size: 14px; color: #4A4366; margin-top: 2px">Tareas pequeñas, verificables y ordenadas.</div></div></div>
+<div style="display: flex; gap: 16px; align-items: flex-start"><span style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 14px; background: #EDE6FF; color: #5B2EE0; display: flex; align-items: center; justify-content: center; font-weight: 800">3</span><div><div style="font-weight: 700">Implementar con Claude Code y Cursor</div><div style="font-size: 14px; color: #4A4366; margin-top: 2px">La IA ejecuta contra la spec; yo dirijo la arquitectura.</div></div></div>
+<div style="display: flex; gap: 16px; align-items: flex-start"><span style="flex-shrink: 0; width: 44px; height: 44px; border-radius: 14px; background: #C6F432; color: #120A33; display: flex; align-items: center; justify-content: center; font-weight: 800">✓</span><div><div style="font-weight: 700">Verificar</div><div style="font-size: 14px; color: #4A4366; margin-top: 2px">Tests y revisión humana antes de entregar.</div></div></div>
+</div>
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- ================= CONTACTO ================= -->
+<section id="contacto" style="max-width: 1280px; margin: 0 auto; padding: clamp(64px, 8vw, 104px) clamp(16px, 3vw, 40px)">
+<div style="background: radial-gradient(circle at 85% 20%, #4B23C9 0%, #1E0E52 55%, #120A33 100%); color: #FFFFFF; border-radius: 32px; padding: clamp(28px, 4vw, 56px); display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr)); gap: 36px; align-items: center; overflow: hidden">
+<div>
+<div style="display: flex; align-items: center; gap: 14px">
+<img src="/_blob/efcc7adaf9535ddde06a3194627e0fbd" alt="" style="width: 64px; height: 64px; border-radius: 50%; object-fit: cover; object-position: 40% 30%; border: 3px solid #C6F432">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; color: #C6F432">HABLEMOS</span>
+</div>
+<h2 style="margin: 16px 0 0; font-family: 'Bricolage Grotesque', sans-serif; font-weight: 800; font-size: clamp(32px, 3.6vw, 48px); line-height: 1.05">¿Tienes un proyecto en mente?</h2>
+<p style="margin: 14px 0 0; font-size: 16px; line-height: 1.6; color: #DCD3FF">Escríbeme y lo convertimos en una spec clara.</p>
+<div style="display: flex; flex-direction: column; gap: 12px; margin-top: 24px; font-size: 15px">
+<a href="mailto:njhs694@gmail.com" style="color: #FFFFFF; text-decoration: none; display: flex; align-items: center; gap: 10px; min-height: 44px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6F432" stroke-width="2" stroke-linecap="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"></rect><path d="M3 7l9 6 9-6"></path></svg>njhs694@gmail.com</a>
+<span style="display: flex; align-items: center; gap: 10px"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#C6F432" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"></path><circle cx="12" cy="9" r="2.5"></circle></svg>Caracas, Venezuela · Remoto</span>
+</div>
+<div style="display: flex; gap: 10px; margin-top: 24px; flex-wrap: wrap">
+<a href="https://www.linkedin.com/in/nairelys-hernandez" style="color: #FFFFFF; border: 1px solid rgba(255,255,255,0.35); padding: 10px 16px; border-radius: 12px; text-decoration: none; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">LinkedIn</a>
+<a href="#" style="color: #FFFFFF; border: 1px solid rgba(255,255,255,0.35); padding: 10px 16px; border-radius: 12px; text-decoration: none; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">GitHub</a>
+<a href="#" style="color: #FFFFFF; border: 1px solid rgba(255,255,255,0.35); padding: 10px 16px; border-radius: 12px; text-decoration: none; font-weight: 600; min-height: 44px; box-sizing: border-box; display: inline-flex; align-items: center">CV ↓</a>
+</div>
+</div>
+<form style="background: #FFFFFF; color: #1A1238; border-radius: 22px; padding: 24px; display: flex; flex-direction: column; gap: 14px">
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr)); gap: 12px">
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Nombre<input type="text" placeholder="Tu nombre" style="border: 2px solid #E4DAFF; border-radius: 12px; padding: 12px; min-height: 44px; box-sizing: border-box"></label>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Email<input type="email" placeholder="tu@email.com" style="border: 2px solid #E4DAFF; border-radius: 12px; padding: 12px; min-height: 44px; box-sizing: border-box"></label>
+</div>
+<label style="display: flex; flex-direction: column; gap: 6px; font-size: 13px; font-weight: 600">Mensaje<textarea rows="4" placeholder="Cuéntame tu idea…" style="border: 2px solid #E4DAFF; border-radius: 12px; padding: 12px; resize: vertical"></textarea></label>
+<button type="button" style="background: #5B2EE0; color: #FFFFFF; border: none; border-radius: 14px; padding: 14px; min-height: 48px; font-weight: 700; cursor: pointer">Enviar mensaje →</button>
+</form>
+</div>
+<p style="text-align: center; margin: 32px 0 0; font-size: 13px; color: #4A4366">© 2026 Nairelys Hernández · Hecho con especificaciones, café y Claude Code.</p>
+</section>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":5600}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {
+      stack: [
+        { mono: 'JS', label: 'JavaScript', bg: '#FFF6C7', fg: '#6B5400' },
+        { mono: 'TS', label: 'TypeScript', bg: '#DDE9FF', fg: '#1D4E9E' },
+        { mono: 'Mo', label: 'MongoDB', bg: '#DFF5E6', fg: '#0F6B33' },
+        { mono: 'Ex', label: 'Express', bg: '#ECEAF2', fg: '#2B2838' },
+        { mono: 'Re', label: 'React', bg: '#DDF4FB', fg: '#0B6A86' },
+        { mono: 'No', label: 'Node.js', bg: '#E6F4DA', fg: '#2F6B12' },
+        { mono: 'Nx', label: 'Next.js', bg: '#1A1238', fg: '#FFFFFF' },
+        { mono: 'Ne', label: 'NestJS', bg: '#FDE0E6', fg: '#A3133A' },
+        { mono: 'V3', label: 'Vue 3', bg: '#DFF5EC', fg: '#1B6B4E' },
+        { mono: 'Ng', label: 'Angular', bg: '#FDE0E0', fg: '#9E1B1B' },
+        { mono: 'Io', label: 'Ionic', bg: '#E0EAFF', fg: '#1F4AB8' },
+        { mono: 'RN', label: 'React Native', bg: '#E4F0FF', fg: '#1B4F8F' },
+        { mono: 'Sc', label: 'Scala', bg: '#FDE3DD', fg: '#9A2414' },
+        { mono: 'Jv', label: 'Java', bg: '#FFEBD6', fg: '#8A4300' },
+        { mono: 'Or', label: 'Oracle', bg: '#FCE4E1', fg: '#8F1D12' },
+        { mono: 'CC', label: 'Claude Code', bg: '#FCE7DD', fg: '#9A3B13' },
+        { mono: 'Cu', label: 'Cursor', bg: '#ECEAF2', fg: '#1A1238' },
+        { mono: 'SD', label: 'SDD', bg: '#EAF9D2', fg: '#3B6B00' }
+      ],
+      jobs: [
+        { when: 'Oct 2023 — Actualidad', company: 'Apps2go', role: 'Desarrolladora Full-Stack', what: 'Desarrollo de microservicios en Scala.', dot: '#5B2EE0' },
+        { when: 'Mar 2023 — Jul 2023', company: 'Libre', role: 'Desarrolladora Full-Stack', what: 'Apps móviles con Ionic y desarrollo full-stack.', dot: '#6B3DF5' },
+        { when: 'Nov 2020 — Abr 2023', company: 'BP Developments', role: 'Desarrolladora Full-Stack', what: 'Front-end con Vue.js; backend con Express.js y NestJS.', dot: '#7C55FF' },
+        { when: 'Ago 2020 — Feb 2021', company: 'Cronapis Corp', role: 'Desarrolladora Front-End', what: 'Desarrollo de interfaces con Angular.', dot: '#8F6BFF' },
+        { when: 'Feb 2020 — Jun 2020', company: 'IPN Digital', role: 'Desarrolladora', what: 'Desarrollo de interfaces con Angular.', dot: '#A98BFF' },
+        { when: 'Sep 2019 — Feb 2020', company: 'DBAccess', role: 'Desarrolladora', what: 'Resolución de issues con Java y bases de datos Oracle.', dot: '#BBA3FF' },
+        { when: 'Mar 2018 — Ago 2019', company: 'Grupo Ingenio Tecnológico', role: 'Desarrolladora Mobile', what: 'Apps con Ionic y desarrollo nativo con Java.', dot: '#C9B6FF' }
+      ]
+    };
+  }
+}
+</script>
+</body>
+</html>

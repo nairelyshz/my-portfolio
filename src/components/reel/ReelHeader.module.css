@@ -1,0 +1,111 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 0 var(--gx-bar);
+  min-height: 60px;
+  border-bottom: 1px solid var(--line);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-height: var(--target);
+  padding: 0;
+  background: none;
+  border: none;
+  color: var(--ink);
+  text-align: left;
+}
+
+.dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--pink);
+}
+
+.name {
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--target);
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: var(--pink);
+}
+
+.sep {
+  color: var(--line);
+}
+
+.lang {
+  display: flex;
+  margin-left: 6px;
+  padding-left: 12px;
+  border-left: 1px solid var(--line);
+}
+
+.langLink {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 32px;
+  min-height: var(--target);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.langLink:hover {
+  color: var(--ink);
+}
+
+.langLink[aria-current="true"] {
+  color: var(--pink);
+}
+
+/* SPEC §7 */
+@media (max-width: 820px) {
+  .email {
+    display: none;
+  }
+}
+
+/* SPEC §7: en móvil el header queda en nombre + idioma; GitHub y LinkedIn siguen en Contacto */
+@media (max-width: 480px) {
+  .social {
+    display: none;
+  }
+  .lang {
+    margin-left: 0;
+    padding-left: 0;
+    border-left: none;
+  }
+}
+
+@media (max-width: 360px) {
+  .name {
+    letter-spacing: 0.16em;
+  }
+}

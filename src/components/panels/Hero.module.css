@@ -1,0 +1,185 @@
+.hero {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  gap: clamp(24px, 4vw, 64px);
+  align-items: center;
+  height: 100%;
+}
+
+.h1 {
+  margin-top: clamp(12px, 2.4vh, 24px);
+  font-size: var(--fs-h1);
+  font-weight: 500;
+  line-height: 0.92;
+  letter-spacing: -0.02em;
+}
+
+.first {
+  display: block;
+  padding-right: 0.1em;
+}
+
+.last {
+  display: block;
+}
+
+.lead {
+  margin-top: clamp(14px, 3vh, 28px);
+  max-width: 44ch;
+  font-size: var(--fs-body);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: clamp(18px, 3.6vh, 36px);
+}
+
+.primary {
+  min-height: 48px;
+  background: var(--pink);
+  color: var(--bg);
+}
+
+.primary:hover {
+  background: #ff85e9;
+}
+
+.arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: rgb(20 16 25 / 0.12);
+  font-size: 12px;
+}
+
+.secondary {
+  min-height: 48px;
+  background: transparent;
+  border: 1px solid var(--line);
+}
+
+.secondary:hover {
+  border-color: var(--pink);
+}
+
+/* ---- Foto ---- */
+.photoCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.photo {
+  position: relative;
+  width: min(100%, 52vh, 440px);
+}
+
+.ring {
+  position: absolute;
+  inset: -14%;
+  width: 128%;
+  height: 128%;
+  max-width: none;
+}
+
+.ringText {
+  font-family: var(--sans);
+  font-size: 9.5px;
+  letter-spacing: 3.2px;
+  fill: var(--lime);
+}
+
+.frame {
+  position: absolute;
+  inset: 8% -6% -6% 8%;
+  border-radius: var(--radius-media);
+  background: var(--grad-frame);
+}
+
+.img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  object-position: 40% 30%;
+  border-radius: var(--radius-media);
+  border: 1px solid var(--line);
+  filter: saturate(1.05) contrast(1.03);
+}
+
+.badge {
+  position: absolute;
+  left: -18px;
+  bottom: 14%;
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  background: var(--lime);
+  color: var(--bg);
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* SPEC §7 */
+@media (max-width: 820px) {
+  .hero {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: auto auto;
+    align-content: center;
+    gap: 20px;
+  }
+  .photoCol {
+    order: -1;
+  }
+  /* 4:5 → el alto es 1.25× el ancho: 26vh deja sitio a la pista de scroll (NAV-8) */
+  .photo {
+    width: min(100%, 26vh);
+  }
+  .badge {
+    left: -10px;
+    font-size: 12px;
+    padding: 6px 12px;
+  }
+}
+
+@media (max-height: 700px) {
+  .lead {
+    display: none;
+  }
+}
+
+/* Pantallas muy bajas en una columna: foto más pequeña para dejar sitio a la pista NAV-8 */
+@media (max-width: 820px) and (max-height: 600px) {
+  .photo {
+    width: min(100%, 20vh);
+  }
+  .hero {
+    gap: 14px;
+    align-content: start;
+    padding-top: 14px;
+  }
+}
+
+/* Teléfonos de 320–360px: los dos CTA deben caber en una línea */
+@media (max-width: 360px) {
+  .ctas {
+    gap: 8px;
+  }
+  .primary,
+  .secondary {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+  .arrow {
+    display: none;
+  }
+}

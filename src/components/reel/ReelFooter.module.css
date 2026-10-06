@@ -1,0 +1,122 @@
+.footer {
+  padding: 10px var(--gx-bar);
+  border-top: 1px solid var(--line);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.prev,
+.next {
+  flex-shrink: 0;
+  width: var(--target);
+  height: var(--target);
+  border-radius: 50%;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev {
+  background: transparent;
+  color: var(--ink);
+  border: 1px solid var(--line);
+  transition: border-color 0.2s, opacity 0.2s;
+}
+
+.prev:hover:not(:disabled) {
+  border-color: var(--pink);
+}
+
+.prev:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+.next {
+  background: var(--pink);
+  color: var(--bg);
+  border: none;
+  font-weight: 700;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+}
+
+/* Área de clic 24×44 (WCAG 2.5.8 pide ≥ 24px); la barra visible mide 14×8 — NAV-4 */
+.dot {
+  width: 24px;
+  height: var(--target);
+  padding: 0;
+  background: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: width 0.4s ease;
+}
+
+.dot[aria-current="step"] {
+  width: 40px;
+}
+
+.bar {
+  display: block;
+  width: 14px;
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: var(--line);
+  transition: width 0.4s ease, background 0.3s ease;
+}
+
+.dot[aria-current="step"] .bar {
+  width: 32px;
+  background: var(--pink);
+}
+
+.dot:hover:not([aria-current="step"]) .bar {
+  background: var(--muted);
+}
+
+.counter {
+  margin-left: auto;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  color: var(--muted);
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+.current {
+  color: var(--ink);
+}
+
+/* SPEC §7: en móvil el contador muestra solo "0N / 06" para que la barra quepa */
+@media (max-width: 480px) {
+  .nav {
+    gap: 10px;
+  }
+  .counterName {
+    display: none;
+  }
+  .counter {
+    letter-spacing: 0.2em;
+  }
+}
+
+/* SPEC §7: a ≤ 360px solo caben ←, puntos y →; los puntos (aria-current) marcan el panel */
+@media (max-width: 360px) {
+  .counter {
+    display: none;
+  }
+  .next {
+    margin-left: auto;
+  }
+}

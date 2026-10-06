@@ -1,0 +1,16 @@
+.panel {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  height: 100%;
+  overflow: hidden;
+  padding: 0 var(--gx);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: var(--bg);
+}
+
+.alt {
+  background: var(--bg-alt);
+}

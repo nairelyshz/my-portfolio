@@ -1,0 +1,148 @@
+.split {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
+  gap: clamp(20px, 3vw, 48px);
+  align-items: center;
+  height: 100%;
+  padding: clamp(12px, 3vh, 32px) 0;
+}
+
+.root {
+  height: 100%;
+}
+
+.headRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
+.heading {
+  color: var(--amber);
+}
+
+/* Botón de pausa/reanudar del recorrido — 44px de objetivo, 32px visibles */
+.toggle {
+  position: relative;
+  flex-shrink: 0;
+  width: var(--target);
+  height: var(--target);
+  margin: -6px 0;
+  padding: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: var(--muted);
+}
+
+.toggle::before {
+  content: "";
+  position: absolute;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  transition: border-color 0.2s;
+}
+
+.toggle:hover {
+  color: var(--ink);
+}
+
+.toggle:hover::before {
+  border-color: var(--pink);
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+}
+
+.item {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  width: 100%;
+  min-height: var(--target);
+  padding: clamp(6px, 1.3vh, 12px) 0;
+  background: none;
+  border: none;
+  border-bottom: 1px solid var(--line);
+  text-align: left;
+  color: var(--ink-dim);
+  transition: color 0.2s;
+}
+
+.item:hover {
+  color: var(--ink);
+}
+
+.item[aria-pressed="true"] {
+  color: var(--pink);
+}
+
+.n {
+  flex-shrink: 0;
+  width: 24px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+}
+
+.name {
+  font-size: var(--fs-project);
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+/* Alto fijo de 3 líneas: con el recorrido automático, la lista no debe saltar
+   cuando cambia el largo de la descripción. */
+.desc {
+  margin-top: clamp(12px, 2.6vh, 24px);
+  min-height: calc(3 * 1.55em);
+  max-width: 40ch;
+  font-size: var(--fs-small);
+  line-height: 1.55;
+  color: var(--muted);
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.tags :global(.chip) {
+  padding: 6px 12px;
+}
+
+.visualCol {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 0;
+}
+
+/* SPEC §7: una columna, lista compacta, sin tags */
+@media (max-width: 820px) {
+  .split {
+    grid-template-columns: minmax(0, 1fr);
+    align-content: center;
+    gap: 16px;
+  }
+  .item {
+    padding: 2px 0;
+  }
+  .desc {
+    margin-top: 10px;
+  }
+  .tags {
+    display: none;
+  }
+}

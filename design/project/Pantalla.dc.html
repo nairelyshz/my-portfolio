@@ -1,0 +1,228 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Portafolio Una Pantalla</title>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@400;600;800&amp;family=Fraunces:ital,wght@0,400;1,900&amp;family=Fredoka:wght@400;700&amp;family=Big+Shoulders+Display:wght@900&amp;family=JetBrains+Mono:wght@400;700&amp;family=Space+Grotesk:wght@400;700&amp;display=swap" rel="stylesheet">
+<style>
+body{margin:0;overflow:hidden}
+a{color:inherit}a:hover{opacity:.75}
+button{font:inherit;cursor:pointer}
+.mv{transition:background-color .5s ease,color .5s ease,border-radius .6s ease,border-color .5s ease,transform .35s cubic-bezier(.34,1.56,.64,1)}
+.tilt{transform:rotate(var(--r,0deg))}
+.tilt:hover{transform:rotate(0deg) scale(1.04)}
+.blob{animation:spin 18s linear infinite}
+@keyframes spin{to{transform:rotate(360deg)}}
+.pop{animation:pop .45s cubic-bezier(.34,1.56,.64,1)}
+@keyframes pop{from{opacity:0;transform:translateY(14px) scale(.98)}to{opacity:1;transform:none}}
+.marq{display:flex;width:max-content;animation:slide 24s linear infinite}
+@keyframes slide{to{transform:translateX(-50%)}}
+.shell{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);gap:clamp(12px,1.6vw,24px);min-height:0}
+.nav{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(4,minmax(0,1fr));gap:clamp(10px,1.2vw,16px);min-height:0}
+@media (max-width:760px){
+.shell{grid-template-columns:1fr;grid-template-rows:minmax(0,1fr) auto}
+.nav{display:flex;overflow-x:auto;overflow-y:hidden;padding:6px 4px 10px}
+.nav>*{flex:0 0 140px;min-height:84px}
+.marqbar{display:none}
+}
+@media (prefers-reduced-motion:reduce){.blob,.marq,.pop{animation:none}}
+</style>
+</helmet>
+<div class="mv" style="background: {{t.bg}}; color: {{t.ink}}; font-family: {{t.body}}; height: 100vh; overflow: hidden; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; box-sizing: border-box">
+
+<!-- ===== BARRA ===== -->
+<header style="display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: clamp(10px, 1.6vh, 18px) clamp(16px, 2.4vw, 32px)">
+<button class="mv" onClick="{{home}}" style="background: none; border: none; color: {{t.ink}}; padding: 0; min-height: 44px; font-family: 'JetBrains Mono', monospace; font-size: 14px; font-weight: 700">[TU NOMBRE] · Dev senior</button>
+<div style="display: flex; align-items: center; gap: 12px">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em">Piel: {{t.name}}</span>
+<button class="mv" onClick="{{cycle}}" aria-label="Cambiar de piel" style="background: {{t.ink}}; color: {{t.bg}}; border: none; border-radius: {{t.chipRadius}}; padding: 10px 18px; min-height: 44px; font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700">↻ Piel</button>
+</div>
+</header>
+
+<!-- ===== ESCENARIO + NAVEGACIÓN ===== -->
+<main class="shell" style="padding: 0 clamp(16px, 2.4vw, 32px) clamp(10px, 1.6vh, 18px)">
+
+<section class="mv" style="position: relative; background: {{t.surface}}; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; box-shadow: 8px 8px 0 {{t.ink}}; overflow: hidden; min-height: 0; display: flex; flex-direction: column">
+
+<div style="display: flex; justify-content: space-between; align-items: center; padding: clamp(12px, 2vh, 20px) clamp(16px, 2.4vw, 32px) 0; font-family: 'JetBrains Mono', monospace; font-size: 12px; text-transform: uppercase; letter-spacing: 0.08em; position: relative; z-index: 2">
+<span>{{pos}} / 09 · {{panelName}}</span>
+<span style="display: flex; gap: 8px">
+<button class="mv" onClick="{{prev}}" aria-label="Anterior" style="background: transparent; color: {{t.ink}}; border: 2px solid {{t.ink}}; border-radius: {{t.chipRadius}}; width: 44px; height: 44px; font-size: 18px">←</button>
+<button class="mv" onClick="{{next}}" aria-label="Siguiente" style="background: {{t.accent}}; color: {{t.onAccent}}; border: 2px solid {{t.ink}}; border-radius: {{t.chipRadius}}; width: 44px; height: 44px; font-size: 18px">→</button>
+</span>
+</div>
+
+<div style="flex-grow: 1; min-height: 0; overflow: auto; position: relative; padding: clamp(12px, 2vh, 24px) clamp(16px, 2.4vw, 32px) clamp(16px, 3vh, 32px); display: flex">
+
+<!-- INICIO -->
+<sc-if value="{{isIntro}}" hint-placeholder-val="{{ true }}">
+<div class="pop" style="display: flex; flex-direction: column; justify-content: flex-end; flex-grow: 1; position: relative">
+<div class="blob mv" style="position: absolute; right: -6%; top: -8%; width: min(46vh, 38vw); aspect-ratio: 1 / 1; background: {{t.accent}}; border-radius: {{t.blob}}; opacity: 0.95"></div>
+<h1 class="mv" style="position: relative; margin: 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(56px, min(11vw, 17vh), 190px); line-height: 0.85; letter-spacing: -0.02em; transform: skewX({{t.skew}})">Me<br>adapto.</h1>
+<p style="position: relative; margin: clamp(12px, 2vh, 24px) 0 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(22px, min(3.2vw, 4.6vh), 44px); line-height: 1.1">Hoy soy <span class="mv" style="background: {{t.accent}}; color: {{t.onAccent}}; padding: 0 10px; border-radius: {{t.chipRadius}}; white-space: nowrap">{{t.role}}</span></p>
+<p style="position: relative; margin: clamp(10px, 1.6vh, 18px) 0 0; font-size: clamp(14px, min(1.3vw, 2.2vh), 18px); line-height: 1.5; max-width: 50ch; color: {{t.muted}}">Desarrollador senior. Del backend al bolsillo con MERN, Next, NestJS, Vue 3, Ionic y React Native. Spec-Driven Development con Claude Code y Cursor.</p>
+</div>
+</sc-if>
+
+<!-- PROYECTO -->
+<sc-if value="{{isProject}}" hint-placeholder-val="{{ false }}">
+<div class="pop" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr)); gap: clamp(16px, 2.4vw, 32px); flex-grow: 1; align-content: end; position: relative">
+<div class="blob mv" style="position: absolute; right: -8%; top: -14%; width: min(40vh, 30vw); aspect-ratio: 1 / 1; background: {{t.accent}}; border-radius: {{t.blob}}"></div>
+<div style="position: relative">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700">PROYECTO {{sel.n}}</span>
+<h2 class="mv" style="margin: 8px 0 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(48px, min(8vw, 13vh), 140px); line-height: 0.86; transform: skewX({{t.skew}})">{{sel.name}}</h2>
+<p style="margin: clamp(10px, 2vh, 20px) 0 0; font-size: clamp(16px, min(1.6vw, 2.6vh), 22px); line-height: 1.45; max-width: 34ch">{{sel.desc}}</p>
+<p style="margin: 12px 0 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(18px, min(1.8vw, 3vh), 26px); color: {{t.muted}}">{{t.blobText}}</p>
+</div>
+<div style="position: relative; display: flex; flex-direction: column; justify-content: flex-end; gap: clamp(12px, 2vh, 20px)">
+<dl style="margin: 0; font-family: 'JetBrains Mono', monospace; font-size: clamp(12px, min(1.1vw, 1.9vh), 15px); display: grid; grid-template-columns: max-content 1fr; gap: 10px 20px">
+<dt style="color: {{t.muted}}">Stack</dt><dd style="margin: 0">[STACK]</dd>
+<dt style="color: {{t.muted}}">Plataforma</dt><dd style="margin: 0">[WEB / iOS / ANDROID]</dd>
+<dt style="color: {{t.muted}}">Mi rol</dt><dd style="margin: 0">[ROL]</dd>
+</dl>
+<a href="#" class="mv" style="align-self: flex-start; background: {{t.accent}}; color: {{t.onAccent}}; border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 10px 20px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">Ver proyecto →</a>
+</div>
+</div>
+</sc-if>
+
+<!-- STACK -->
+<sc-if value="{{isStack}}" hint-placeholder-val="{{ false }}">
+<div class="pop" style="display: flex; flex-direction: column; justify-content: flex-end; flex-grow: 1; gap: clamp(16px, 3vh, 32px)">
+<h2 class="mv" style="margin: 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(40px, min(6vw, 10vh), 100px); line-height: 0.9">Caja de<br>herramientas</h2>
+<div style="display: flex; flex-wrap: wrap; gap: clamp(8px, 1.4vh, 14px) clamp(8px, 1vw, 12px)">
+<sc-for list="{{stack}}" as="s" hint-placeholder-count="12">
+<span class="mv tilt" style="--r: {{s.rot}}; display: inline-block; background: {{s.bg}}; color: {{s.ink}}; border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: clamp(6px, 1.2vh, 12px) clamp(14px, 1.6vw, 22px); font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(16px, min(2vw, 3.4vh), 28px)">{{s.label}}</span>
+</sc-for>
+</div>
+</div>
+</sc-if>
+
+<!-- MÉTODO SDD -->
+<sc-if value="{{isSdd}}" hint-placeholder-val="{{ false }}">
+<div class="pop" style="display: flex; flex-direction: column; justify-content: flex-end; flex-grow: 1; gap: clamp(16px, 3vh, 28px)">
+<h2 class="mv" style="margin: 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(40px, min(6vw, 10vh), 100px); line-height: 0.9">Primero la spec,<br>luego el código.</h2>
+<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 150px), 1fr)); gap: 12px">
+<div class="mv tilt" style="--r: -1.5deg; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; padding: clamp(10px, 1.8vh, 18px)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700">01</div><div style="font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(20px, min(2vw, 3.4vh), 30px); margin-top: 6px">Especificar</div><div style="font-size: 14px; margin-top: 4px; color: {{t.muted}}">Contratos y criterios de aceptación.</div></div>
+<div class="mv tilt" style="--r: 1deg; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; padding: clamp(10px, 1.8vh, 18px)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700">02</div><div style="font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(20px, min(2vw, 3.4vh), 30px); margin-top: 6px">Planificar</div><div style="font-size: 14px; margin-top: 4px; color: {{t.muted}}">Tareas pequeñas y verificables.</div></div>
+<div class="mv tilt" style="--r: -1deg; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; padding: clamp(10px, 1.8vh, 18px)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700">03</div><div style="font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(20px, min(2vw, 3.4vh), 30px); margin-top: 6px">Implementar</div><div style="font-size: 14px; margin-top: 4px; color: {{t.muted}}">Claude Code y Cursor contra la spec.</div></div>
+<div class="mv tilt" style="--r: 1.5deg; background: {{t.accent}}; color: {{t.onAccent}}; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; padding: clamp(10px, 1.8vh, 18px)"><div style="font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 700">04</div><div style="font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(20px, min(2vw, 3.4vh), 30px); margin-top: 6px">Verificar</div><div style="font-size: 14px; margin-top: 4px">Revisión humana y tests.</div></div>
+</div>
+</div>
+</sc-if>
+
+<!-- CONTACTO -->
+<sc-if value="{{isContact}}" hint-placeholder-val="{{ false }}">
+<div class="pop" style="display: flex; flex-direction: column; justify-content: flex-end; flex-grow: 1; gap: clamp(16px, 3vh, 32px)">
+<h2 class="mv" style="margin: 0; font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(44px, min(7vw, 12vh), 120px); line-height: 0.88; transform: skewX({{t.skew}})">¿Qué forma necesita tu equipo?</h2>
+<div style="display: flex; flex-wrap: wrap; gap: 12px">
+<a href="mailto:[EMAIL]" class="mv" style="background: {{t.accent}}; color: {{t.onAccent}}; border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 10px 22px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">[EMAIL]</a>
+<a href="#" class="mv" style="border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 10px 22px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">GitHub</a>
+<a href="#" class="mv" style="border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 10px 22px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">LinkedIn</a>
+<a href="#" class="mv" style="border: 3px solid {{t.ink}}; border-radius: {{t.chipRadius}}; padding: 10px 22px; min-height: 44px; box-sizing: border-box; text-decoration: none; font-weight: 700; display: inline-flex; align-items: center">CV ↓</a>
+</div>
+</div>
+</sc-if>
+
+</div>
+</section>
+
+<nav class="nav" aria-label="Secciones">
+<sc-for list="{{tiles}}" as="k" hint-placeholder-count="8">
+<button class="mv tilt" onClick="{{k.pick}}" aria-pressed="{{k.pressed}}" style="--r: {{k.rot}}; text-align: left; background: {{k.bg}}; color: {{k.ink}}; border: 3px solid {{t.ink}}; border-radius: {{t.radius}}; box-shadow: 4px 4px 0 {{t.ink}}; padding: clamp(8px, 1.4vh, 16px) clamp(10px, 1.2vw, 16px); display: flex; flex-direction: column; justify-content: space-between; gap: 4px; min-height: 0; overflow: hidden">
+<span style="font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 700">{{k.n}}</span>
+<span style="font-family: {{t.display}}; font-weight: {{t.dWeight}}; font-style: {{t.dStyle}}; font-size: clamp(16px, min(1.7vw, 3vh), 28px); line-height: 0.95">{{k.label}}</span>
+</button>
+</sc-for>
+</nav>
+
+</main>
+
+<!-- ===== MARQUESINA ===== -->
+<div class="marqbar mv" style="background: {{t.accent}}; color: {{t.onAccent}}; border-top: 3px solid {{t.ink}}; overflow: hidden; padding: 8px 0">
+<div class="marq" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; font-weight: 700; white-space: nowrap; gap: 32px">
+<span>MERN ✦ NEXT ✦ NESTJS ✦ VUE 3 ✦ IONIC ✦ REACT NATIVE ✦ CLAUDE CODE ✦ CURSOR ✦ SDD ✦ UNA SOLA PANTALLA, NUEVE FORMAS ✦</span>
+<span>MERN ✦ NEXT ✦ NESTJS ✦ VUE 3 ✦ IONIC ✦ REACT NATIVE ✦ CLAUDE CODE ✦ CURSOR ✦ SDD ✦ UNA SOLA PANTALLA, NUEVE FORMAS ✦</span>
+</div>
+</div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1440,"height":900}}'>
+class Component extends DCLogic {
+  renderVals() {
+    var themes = {
+      base:   { name: 'Camaleón', role: 'camaleón full-stack', blobText: 'Una forma para cada problema', bg: '#F4F1EA', surface: '#FFFFFF', ink: '#161616', muted: '#4A4740', accent: '#FF4D2E', onAccent: '#161616', display: "'Bricolage Grotesque', sans-serif", dWeight: 800, dStyle: 'normal', body: "'Bricolage Grotesque', sans-serif", radius: '22px', chipRadius: '999px', skew: '0deg', blob: '42% 58% 63% 37% / 41% 44% 56% 59%' },
+      cuento: { name: 'Cuento', role: 'narrador de código', blobText: 'Había una vez un commit…', bg: '#FFE9B8', surface: '#FFF7E3', ink: '#3A1F0F', muted: '#6B4426', accent: '#F2762E', onAccent: '#3A1F0F', display: "'Fraunces', serif", dWeight: 900, dStyle: 'italic', body: "'Fraunces', serif", radius: '36px', chipRadius: '999px', skew: '0deg', blob: '50%' },
+      vetsi:  { name: 'Vetsi', role: 'médico de producto', blobText: 'Diagnóstico: todo en verde', bg: '#E3F4EE', surface: '#FFFFFF', ink: '#0E3B32', muted: '#2E5E53', accent: '#5FD3A8', onAccent: '#0E3B32', display: "'Fredoka', sans-serif", dWeight: 700, dStyle: 'normal', body: "'Fredoka', sans-serif", radius: '30px', chipRadius: '999px', skew: '0deg', blob: '50% 50% 40% 60% / 60% 40% 60% 40%' },
+      wobber: { name: 'Wobber', role: 'motero del deploy', blobText: 'Acelera a producción', bg: '#141414', surface: '#232323', ink: '#F2F0EA', muted: '#B8B4AA', accent: '#FF6A00', onAccent: '#141414', display: "'Big Shoulders Display', sans-serif", dWeight: 900, dStyle: 'normal', body: "'Space Grotesk', sans-serif", radius: '0px', chipRadius: '0px', skew: '-8deg', blob: '0%' },
+      glik:   { name: 'Glik', role: 'guardián de usuarios', blobText: '> acceso concedido_', bg: '#0B1020', surface: '#141B33', ink: '#D7FFE0', muted: '#8FB59A', accent: '#39FF88', onAccent: '#0B1020', display: "'JetBrains Mono', monospace", dWeight: 700, dStyle: 'normal', body: "'JetBrains Mono', monospace", radius: '6px', chipRadius: '4px', skew: '0deg', blob: '8px' },
+      libre:  { name: 'Libre', role: 'conductor de rutas', blobText: 'Destino: tu próximo producto', bg: '#E8EEFF', surface: '#FFFFFF', ink: '#10183A', muted: '#3A4472', accent: '#3355FF', onAccent: '#FFFFFF', display: "'Space Grotesk', sans-serif", dWeight: 700, dStyle: 'normal', body: "'Space Grotesk', sans-serif", radius: '26px', chipRadius: '999px', skew: '0deg', blob: '999px 999px 999px 0' }
+    };
+    var skins = ['base', 'cuento', 'vetsi', 'wobber', 'glik', 'libre'];
+    var projects = {
+      cuento: { n: '01', name: 'Tu voz, tu cuento', desc: 'Crea cuentos a partir de la narración de un niño.' },
+      vetsi:  { n: '02', name: 'Vetsi', desc: 'Atención médica primaria para mascotas.' },
+      wobber: { n: '03', name: 'Wobber', desc: 'Red social para moteros.' },
+      glik:   { n: '04', name: 'Glik', desc: 'Autogestión de usuarios.' },
+      libre:  { n: '05', name: 'Libre', desc: 'Aplicación de servicio de transporte.' }
+    };
+    var panels = ['intro', 'cuento', 'vetsi', 'wobber', 'glik', 'libre', 'stack', 'sdd', 'contacto'];
+    var names = { intro: 'Inicio', cuento: 'Tu voz, tu cuento', vetsi: 'Vetsi', wobber: 'Wobber', glik: 'Glik', libre: 'Libre', stack: 'Stack', sdd: 'Método SDD', contacto: 'Contacto' };
+    var st = this.state || {};
+    var panel = st.panel || 'intro';
+    var skin = st.skin || 'base';
+    var t = themes[skin];
+    var self = this;
+    var go = function (p) {
+      var s = (self.state && self.state.skin) || 'base';
+      self.setState({ panel: p, skin: projects[p] ? p : (p === 'intro' && !self.state ? 'base' : s) });
+    };
+    var idx = panels.indexOf(panel);
+    var tileIds = ['cuento', 'vetsi', 'wobber', 'glik', 'libre', 'stack', 'sdd', 'contacto'];
+    var tileNums = ['01', '02', '03', '04', '05', '{ }', '→', '@'];
+    var rots = ['-1.5deg', '1deg', '1.5deg', '-1deg', '-1deg', '2deg', '1deg', '-1.5deg'];
+    var tiles = tileIds.map(function (id, i) {
+      var on = id === panel;
+      return {
+        n: tileNums[i], label: names[id], rot: rots[i],
+        pressed: on ? 'true' : 'false',
+        bg: on ? t.accent : t.surface,
+        ink: on ? t.onAccent : t.ink,
+        pick: function () { go(id); }
+      };
+    });
+    var labels = ['MongoDB', 'Express', 'React', 'Node.js', 'Next.js', 'NestJS', 'Vue 3', 'Ionic', 'React Native', 'Claude Code', 'Cursor', 'SDD'];
+    var srots = ['-3deg', '2deg', '-1deg', '3deg', '-2deg', '1deg', '-4deg', '2.5deg', '-1.5deg', '3deg', '-2.5deg', '1.5deg'];
+    var stack = labels.map(function (l, i) {
+      var hot = i % 3 === 0;
+      return { label: l, rot: srots[i], bg: hot ? t.accent : t.bg, ink: hot ? t.onAccent : t.ink };
+    });
+    var sel = projects[panel] || { n: '', name: '', desc: '' };
+    return {
+      t: t,
+      tiles: tiles,
+      stack: stack,
+      sel: sel,
+      pos: '0' + (idx + 1),
+      panelName: names[panel],
+      isIntro: panel === 'intro',
+      isProject: !!projects[panel],
+      isStack: panel === 'stack',
+      isSdd: panel === 'sdd',
+      isContact: panel === 'contacto',
+      next: function () { go(panels[(idx + 1) % panels.length]); },
+      prev: function () { go(panels[(idx + panels.length - 1) % panels.length]); },
+      home: function () { go('intro'); },
+      cycle: function () { self.setState({ skin: skins[(skins.indexOf(skin) + 1) % skins.length] }); }
+    };
+  }
+}
+</script>
+</body>
+</html>

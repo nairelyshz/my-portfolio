@@ -1,0 +1,53 @@
+/* Tokens del sistema visual — SPEC §6. Solo modo oscuro. */
+:root {
+  color-scheme: dark;
+
+  /* Color */
+  --bg: #141019;
+  --bg-alt: #1e1826;
+  --ink: #f5efe7;
+  --ink-soft: rgb(245 239 231 / 0.75);
+  --ink-dim: rgb(245 239 231 / 0.55);
+  --muted: #a8a0b6;
+  --line: #2e2637;
+  --pink: #ff5ce1;
+  --amber: #ffb03a;
+  --lime: #c6f14a;
+  --whatsapp: #5be38f;
+  --grad: linear-gradient(90deg, #ff5ce1 0%, #ffb03a 55%, #c6f14a 100%);
+  --grad-frame: linear-gradient(135deg, #ff5ce1, #ffb03a);
+
+  /* Tipografía — las variables --font-* las define next/font en <html> */
+  --sans: var(--font-sans), system-ui, sans-serif;
+  --serif: var(--font-serif), Georgia, serif;
+
+  /* Escala fluida (valores de Reel.dc.html) */
+  --fs-h1: clamp(54px, min(8.6vw, 13vh), 136px);
+  --fs-h2: clamp(30px, min(4vw, 6.6vh), 60px);
+  --fs-body: clamp(15px, min(1.4vw, 2.3vh), 19px);
+  --fs-small: clamp(15px, min(1.3vw, 2.2vh), 18px);
+  --fs-stat: clamp(48px, min(6vw, 10vh), 88px);
+  --fs-marq-a: clamp(36px, min(5vw, 8vh), 76px);
+  --fs-marq-b: clamp(32px, min(4.4vw, 7vh), 68px);
+  --fs-project: clamp(24px, min(3vw, 5vh), 46px);
+  --fs-job: clamp(16px, min(1.6vw, 2.6vh), 22px);
+  --fs-email: clamp(30px, min(5.4vw, 9vh), 88px);
+  --fs-eyebrow: 12px;
+  --fs-chip: 11px;
+
+  --tracking-eyebrow: 0.35em;
+  --tracking-chip: 0.18em;
+
+  /* Espaciado */
+  --gx: clamp(20px, 5vw, 72px); /* gutter de los paneles */
+  --gx-bar: clamp(16px, 3vw, 40px); /* gutter de header y footer */
+
+  /* Forma */
+  --radius-pill: 999px;
+  --radius-media: 32px;
+  --radius-visual: 24px;
+  --target: 44px; /* objetivo táctil mínimo — SPEC §8 */
+
+  /* Movimiento */
+  --ease-out: cubic-bezier(0.77, 0, 0.18, 1);
+}
